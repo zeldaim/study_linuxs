@@ -1,6 +1,0 @@
-[yhc@localhost ~]$ cd / home/yhc/pictures
-bash: cd: too many arguments
-[yhc@localhost ~]$ cd /home/yhc/Pictures
-[yhc@localhost Pictures]$ ls
-'Screenshot from 2025-07-14 18-09-28.png'
-[yhc@localhost Pictures]$ 
