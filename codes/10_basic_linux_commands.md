@@ -1,3 +1,5 @@
+Level 1: 기본 탐색 및 폴더 조작
+'''
 [yhc@localhost ~]$ pwd 
 /home/yhc
 [yhc@localhost ~]$ cd ..
@@ -77,6 +79,7 @@ exports                  lvm             rsyncd.conf               yum
 favicon.png              machine-id      rsyslog.conf              yum.conf
 filesystems              magic           rsyslog.d                 yum.repos.d
 firefox                  mailcap         rwtab.d
+'''
 [yhc@localhost etc]$ mkdir practice 
 mkdir: cannot create directory ‘practice’: Permission denied
 [yhc@localhost etc]$ ..
