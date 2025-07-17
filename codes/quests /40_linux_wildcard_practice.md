@@ -125,9 +125,11 @@ ls: cannot access '*.log': No such file or directory
 
 ## 문제 5: 고급 와일드카드 활용
 
-### 5-1. 파일명이 `test`로 시작하지 않는 모든 `.log` 파일 출력
+### 5-1. 파일명이 `test`로 시작하지 않는 모든 `.log` 파일 출력(log로 시작하지 않는 txt 파일로 문제 변경함)
 ```bash
-# 명령어를 작성하세요
+[yhc@localhost wildcard_file_practice]$ ls [!log]*.txt
+final_report.txt  report1.txt  report2.txt  report3.txt
+
 ```
 
 ### 5-2. 모든 이미지 파일 (jpg, png, gif)을 `docs` 디렉터리로 이동
