@@ -232,7 +232,15 @@ data1.csv     data_old.csv  license.txt       log_system.txt  report1.txt       
 
 ### 7-2. `d`로 시작하는 디렉터리만 출력
 ```bash
-# 명령어를 작성하세요
+# [yhc@localhost wildcard_file_practice]$ ls ./d*[!.]*
+./data1.csv  ./data2.csv  ./data3.csv  ./data_old.csv  ./document.pdf
+
+./data:
+2024  file_001.dat  file_002.dat  file_010.dat
+
+./documents:
+report1.txt  report2.txt  report3.txt
+
 ```
 
 ### 7-3. 모든 하위 디렉터리에 `readme.txt` 파일 생성
