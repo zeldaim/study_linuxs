@@ -25,22 +25,22 @@ mkdir logs temp docs
 
 ### 1-1. 모든 `.txt` 파일 목록 출력
 ```bash
-# 명령어를 작성하세요
+ls -l *.txt
 ```
 
 ### 1-2. `file`로 시작하는 모든 파일 목록 출력
 ```bash
-# 명령어를 작성하세요
+ls file*
 ```
 
 ### 1-3. `.log`로 끝나는 모든 파일 목록 출력
 ```bash
-# 명령어를 작성하세요
+ls *.log
 ```
 
 ### 1-4. `backup`으로 시작하는 모든 파일을 `temp` 디렉터리로 복사
 ```bash
-# 명령어를 작성하세요
+cp backup* ./temp
 ```
 
 ---
@@ -49,17 +49,17 @@ mkdir logs temp docs
 
 ### 2-1. `file`로 시작하고 한 글자 숫자가 오는 `.txt` 파일 출력
 ```bash
-# 명령어를 작성하세요
+ls -l  file?.txt 
 ```
 
 ### 2-2. `test`로 시작하고 한 글자 숫자가 오는 `.log` 파일 출력
 ```bash
-# 명령어를 작성하세요
+ls -l test?.log
 ```
 
 ### 2-3. `image`로 시작하고 한 글자 숫자가 오는 모든 파일 출력
 ```bash
-# 명령어를 작성하세요
+ls image?*
 ```
 
 ---
@@ -68,12 +68,12 @@ mkdir logs temp docs
 
 ### 3-1. `file1.txt`, `file2.txt`, `file3.doc` 중에서 `file1.txt`와 `file2.txt`만 출력
 ```bash
-# 명령어를 작성하세요
+ls file[12]*
 ```
 
 ### 3-2. `test1.log`와 `test2.log`만 출력 (error.log, debug.log 제외)
 ```bash
-# 명령어를 작성하세요
+ls {test1,test2}.log
 ```
 
 ### 3-3. 파일명이 `a`부터 `f`로 시작하는 모든 파일 출력
@@ -163,21 +163,22 @@ mkdir logs temp docs
 
 ### 8-1. 파일명에 숫자가 정확히 1개 들어간 파일 출력
 ```bash
-# 명령어를 작성하세요
+$ ls -l *[!0-9][0-9][!0-9]*
+
 ```
 
 ### 8-2. 확장자가 `.txt`, `.doc`, `.log` 중 하나인 파일들의 크기 확인
 ```bash
-# 명령어를 작성하세요
+ls -l *.txt
 ```
 
 ### 8-3. 파일명이 `test` 또는 `file`로 시작하는 모든 파일 삭제 (주의: 실제로는 실행하지 말고 명령어만 작성)
 ```bash
 # 명령어를 작성하세요
 ```
-
+rm *.test
 ---
-
+ls 
 ## 보너스 문제
 
 ### 보너스 1: 모든 로그 파일을 날짜별로 분류하여 `logs` 디렉터리의 하위 폴더로 이동
