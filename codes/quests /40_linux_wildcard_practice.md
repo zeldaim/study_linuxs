@@ -106,7 +106,9 @@ data3.csv  final_report.txt  image3.png  log_error.txt   presentation.ppt  repor
 
 ### 4-2. 숫자가 포함된 모든 파일 출력
 ```bash
-# 명령어를 작성하세요
+yhc@localhost wildcard_file_practice]$ ls *[0-9]*
+data1.csv  data2.csv  data3.csv  image1.jpg  image2.jpg  image3.png  report1.txt  report2.txt  report3.txt
+[yhc@localhost wildcard_file_practice]$ 를 작성하세요
 ```
 
 ### 4-3. `.txt` 또는 `.log` 파일만 출력
