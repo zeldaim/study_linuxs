@@ -134,7 +134,7 @@ final_report.txt  report1.txt  report2.txt  report3.txt
 
 ### 5-2. 모든 이미지 파일 (jpg, png, gif)을 `docs` 디렉터리로 이동
 ```bash
-```
+
 yhc@localhost wildcard_file_practice]$ mv *.{jpg,png,gif} ./../../quests/wildcard_practice/docs/
 [yhc@localhost wildcard_file_practice]$ ls ./../../quests/wildcard_practice/docs/
 image1.jpg  image2.jpg  image2.png  image3.png  photo.gif  readme.txt
@@ -151,8 +151,14 @@ image1.jpg  image2.jpg  image2.png  image3.png  photo.gif  readme.txt
 
 ### 6-1. 확장자가 있는 모든 파일을 `temp` 디렉터리로 복사
 ```bash
-# 명령어를 작성하세요
-```
+[yhc@localhost wildcard_file_practice]$ cp *.* ./../../Downloads/wildcard_file_practice/temp/
+[yhc@localhost wildcard_file_practice]$ ls ./../../Downloads//wildcard_file_practice//temp/
+changelog.md  data2.csv     document.pdf      log_access.txt  presentation.ppt  report2.txt
+config.conf   data3.csv     final_report.txt  log_error.txt   readme.md         report3.txt
+data1.csv     data_old.csv  license.txt       log_system.txt  report1.txt       spreadsheet.xls
+[yhc@localhost wildcard_file_practice]$ 
+
+```ㅣ
 
 ### 6-2. 파일명이 4글자 이하인 파일들의 상세 정보 출력
 ```bash
