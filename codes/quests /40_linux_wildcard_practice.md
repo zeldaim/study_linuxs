@@ -167,11 +167,18 @@ data1.csv  data2.csv  data3.csv
 
 ```
 
-### 6-3. `file`로 시작하는 모든 파일의 내용을 `combined.txt`로 합치기
+### 6-3. `file`로 시작하는 모든 파일의 내용을 `combined.txt`로 합치기-모든 텍스트 파일을 combined.txt로 합침
 ```bash
 # 명령어를 작성하세요
 ```
-
+[yhc@localhost wildcard_file_practice]$  cat *.txt >combined.txt 
+[yhc@localhost wildcard_file_practice]$ ls
+archives      data          document.pdf      log_access.txt    project_A    report2.txt
+backup        data1.csv     documents         log_error.txt     project_B    report3.txt
+changelog.md  data2.csv     final_report.txt  logs              project_C    scripts
+combined.txt  data3.csv     images            log_system.txt    readme.md    spreadsheet.xls
+config.conf   data_old.csv  license.txt       presentation.ppt  report1.txt  temp
+[yhc@localhost wildcard_file_practice]$ 
 ---
 
 ## 문제 7: 디렉터리 와일드카드
