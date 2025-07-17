@@ -80,8 +80,17 @@ ls {test1,test2}.log
 ```bash
 # 명령어를 작성하세요
 ```
+[yhc@localhost wildcard_file_practice]$ ls -l [a-f]*.*
+-rw-r--r--. 1 yhc yhc 0 Jul 17 17:32 changelog.md
+-rw-r--r--. 1 yhc yhc 0 Jul 17 17:31 config.conf
+-rw-r--r--. 1 yhc yhc 0 Jul 17 17:30 data1.csv
+-rw-r--r--. 1 yhc yhc 0 Jul 17 17:30 data2.csv
+-rw-r--r--. 1 yhc yhc 0 Jul 17 17:30 data3.csv
+-rw-r--r--. 1 yhc yhc 0 Jul 17 17:30 data_old.csv
+-rw-r--r--. 1 yhc yhc 0 Jul 17 17:32 document.pdf
+-rw-r--r--. 1 yhc yhc 0 Jul 17 17:32 final_report.txt
 
----
+```
 
 ## 문제 4: 복합 와일드카드 활용
 
