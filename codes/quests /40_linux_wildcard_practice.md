@@ -96,8 +96,13 @@ ls {test1,test2}.log
 
 ### 4-1. 확장자가 3글자인 모든 파일 출력 (예: .txt, .doc, .log, .jpg, .png, .gif, .tar)
 ```bash
-# 명령어를 작성하세요
-```
+#[yhc@localhost wildcard_file_practice]$ ls *.???
+data1.csv  data_old.csv      image1.jpg  license.txt     log_system.txt    report1.txt  spreadsheet.xls
+data2.csv  document.pdf      image2.jpg  log_access.txt  photo.gif         report2.txt
+data3.csv  final_report.txt  image3.png  log_error.txt   presentation.ppt  report3.txt
+[yhc@localhost wildcard_file_practice]$ 
+
+ ```
 
 ### 4-2. 숫자가 포함된 모든 파일 출력
 ```bash
