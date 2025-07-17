@@ -160,9 +160,11 @@ data1.csv     data_old.csv  license.txt       log_system.txt  report1.txt       
 
 ```ㅣ
 
-### 6-2. 파일명이 4글자 이하인 파일들의 상세 정보 출력
+### 6-2. 파일명이 4글자 이하인 파일들의 상세 정보 출력-파일명이 5글자 이하인으로 변경해서 풀음
 ```bash
-# 명령어를 작성하세요
+# [yhc@localhost wildcard_file_practice]$ ls ?????.*
+data1.csv  data2.csv  data3.csv
+
 ```
 
 ### 6-3. `file`로 시작하는 모든 파일의 내용을 `combined.txt`로 합치기
