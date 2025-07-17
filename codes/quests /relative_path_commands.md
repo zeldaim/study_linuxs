@@ -1,3 +1,7 @@
+250717리눅스 상대주소 실습
+- 
+### 사전 준비: 실습 환경 설정
+```
 [yhc@localhost ~]$ mkdir -p ~/practice/project/{src,docs,tests,config}
 [yhc@localhost ~]$ mkdir -p ~/practice/project/src/{main,utils}
 [yhc@localhost ~]$ mkdir -p ~/practice/project/docs/{user,dev}
@@ -9,6 +13,9 @@
 [yhc@localhost ~]$ touch ~/practice/project/docs/dev/api.md
 [yhc@localhost ~]$ touch ~/practice/project/tests/test_main.py
 [yhc@localhost ~]$ touch ~/practice/project/config/settings.conf
+```
+### 실습환경 결과 확인
+```
 [yhc@localhost ~]$ tree
 .
 ├── Desktop
@@ -67,7 +74,13 @@
 └── Videos
 
 36 directories, 18 files
+```
+### 홈으로 이동 
+```
 [yhc@localhost ~]$ cd ~
+```
+### 이전 실습내용 지우고 구조 확인 했지만 다 지우지는 못함
+```
 [yhc@localhost ~]$ rm ./Downloads/project/
 rm: cannot remove './Downloads/project/': Is a directory
 [yhc@localhost ~]$ rm -r ./Downloads/project/
@@ -125,6 +138,9 @@ rm: cannot remove './Downloads/project/': Is a directory
 └── Videos
 
 32 directories, 18 files
+```
+### 연습문제 1 :기본 상대 주소의 이해
+```
 [yhc@localhost ~]$ cd ./practice/project/src/main/
 [yhc@localhost main]$ pwd 
 /home/yhc/practice/project/src/main
@@ -132,61 +148,127 @@ rm: cannot remove './Downloads/project/': Is a directory
 [yhc@localhost utils]$ tree
 .
 └── helper.py
-
 0 directories, 1 file
+```
+helper.py 파일 확인
+```
 [yhc@localhost utils]$ ./helper.py
 bash: ./helper.py: Permission denied
+```
+
+```
 [yhc@localhost utils]$ cd ./helper.py 
 bash: cd: ./helper.py: Not a directory
+```
+파일이라서 이동은 안되는 것 같음
+그래서 그냥 파일을 보관한 폴더까지 이동하고 파일의 존재를 확인하는 방식으로 실습 진행
+```
 [yhc@localhost utils]$ cd ./../../
 [yhc@localhost project]$ pwd 
 /home/yhc/practice/project
+```
+project 폴더에 이동 후
+```
 [yhc@localhost project]$ cd ./README.MD 
 bash: cd: ./README.MD: No such file or directory
 [yhc@localhost project]$ cd ./README.md 
 bash: cd: ./README.md: Not a directory
+```
+다시 한번 파일로 이동 시도했지만 디렉토리가 아니라 안된다는 메세지 나옴
+```
 [yhc@localhost project]$ ./../../
 bash: ./../../: Is a directory
 [yhc@localhost project]$ pwd 
 /home/yhc/practice/project
+```
+상대주소를 쳤지만 cd를 빼먹음 현재 위치 변동 없음을 확인. 어차피 결과 값은 같았을 것 같음
+
+```
 [yhc@localhost project]$ cd ./docs/user/
 [yhc@localhost user]$ ls 
 manual.txt
+```
+상대주소를 이용해 manual. txt파일을 확인함
+```
 [yhc@localhost user]$ cd ./../../config/
 [yhc@localhost config]$ ls 
 settings.conf
+```
+상대주소를 이용해 settings.conf 파일을 확인함
+1-2 상대 주소 검증
+```
 [yhc@localhost config]$ cd ~/practice/project/src/main/
 [yhc@localhost main]$ ls ./../../src/main/
 app.py
+```
+### 연습문제 2: 다양한 시작점에서의 상대 주소
+```
 [yhc@localhost main]$ cd ~/practice/project/docs/user/
 [yhc@localhost user]$ cd ./../../src/main/
 [yhc@localhost main]$ ls
 app.py
+```
+상대주소를 이용해 app.py파일로 이동함
+```
 [yhc@localhost main]$ cd ./../../tests/
 [yhc@localhost tests]$ ls
 test_main.py  unit
+```
+test_main.py 파일로 이동함
+연습문제 2-3 3번 helper.py파일 찾기는 실수로 빼먹음 
+### 연습문제 3: 파일 내용 확인 및 조작 
+```
 [yhc@localhost tests]$ cd ./../src/utils/
+```
+utils 디렉토리로 이동
+```
 [yhc@localhost utils]$ cd ~/practice/project/tests/unit/
 [yhc@localhost unit]$ cd ./../../..
 [yhc@localhost practice]$ cd ~/practice/project/tests/unit/
 [yhc@localhost unit]$ cd ./../../../project/
 [yhc@localhost project]$ cd ~/practice/project/tests/unit/
+```
+상대주소를 이용해 practice 디렉터리로 이동 후  다시 unit디렉토리 이동 후 다시 project디렉터리 이동 후 다시 절대주소를 이용해 unit 디렉터리로 이동... 아직 이유는 모르겠음 
+```
 [yhc@localhost unit]$ ./../../src/main/
 bash: ./../../src/main/: Is a directory
 [yhc@localhost unit]$ ls 
+```
+명령어를 적지 않아 그냥 정보만 출력이 되고 현재 unit디렉터리는 비어있음을 확인함
+```
 [yhc@localhost unit]$ cd ~/practice/project/tests/unit/
+```
+다시 한번 더 절대주소로 현재 디렉터리에서 현재 디렉터리로 이동함- 그냥 필요 없는 작업
+```
 [yhc@localhost unit]$ cd ./../../src/main/
 [yhc@localhost main]$ ls
 app.py
+```
+상대주소를 이용해 app.py 파일로 이동함
+```
 [yhc@localhost main]$ cd ~/practice/project/tests/unit/
 [yhc@localhost unit]$ cd ./../../src/utils/
 [yhc@localhost utils]$ ls
 helper.py
+```
+상대주소를 이용해 unit 디렉터리에서 utils 디렉터리로 이동해 helper.py 파일 확인
+```
 [yhc@localhost utils]$ cd  ~/practice/project/src/utils/
+```
+절대 주소를 이용해 또 필요없인 내 디렉터리에서 내 디렉터리로 이동함
+```
 [yhc@localhost utils]$ man pt
 No manual entry for pt
+```
+불필요한 코드
+```
 [yhc@localhost utils]$ man cat
-[yhc@localhost utils]$ cat ~/practice/project/README.md 
+```
+cat 명령어가 출력코드가 맞는지 확인을 해 봄
+```
+[yhc@localhost utils]$ cat ~/practice/project/README.md
+```
+ 
 [yhc@localhost utils]$ ls -l ~/practice/project/docs/user/manual.txt 
 -rw-r--r--. 1 yhc yhc 0 Jul 16 16:22 /home/yhc/practice/project/docs/user/manual.txt
 [yhc@localhost utils]$ ls -l ~/practice/project/config/settings.conf 
