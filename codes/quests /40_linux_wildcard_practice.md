@@ -114,7 +114,12 @@ data1.csv  data2.csv  data3.csv  image1.jpg  image2.jpg  image3.png  report1.txt
 ### 4-3. `.txt` 또는 `.log` 파일만 출력
 ```bash
 # 명령어를 작성하세요
-```
+`[yhc@localhost wildcard_file_practice]$ ls *.txt && ls *.log
+final_report.txt  log_access.txt  log_system.txt  report2.txt
+license.txt       log_error.txt   report1.txt     report3.txt
+ls: cannot access '*.log': No such file or directory
+[yhc@localhost wildcard_file_practice]$ 
+``
 
 ---
 
