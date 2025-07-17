@@ -134,9 +134,12 @@ final_report.txt  report1.txt  report2.txt  report3.txt
 
 ### 5-2. 모든 이미지 파일 (jpg, png, gif)을 `docs` 디렉터리로 이동
 ```bash
-# 명령어를 작성하세요
 ```
-
+yhc@localhost wildcard_file_practice]$ mv *.{jpg,png,gif} ./../../quests/wildcard_practice/docs/
+[yhc@localhost wildcard_file_practice]$ ls ./../../quests/wildcard_practice/docs/
+image1.jpg  image2.jpg  image2.png  image3.png  photo.gif  readme.txt
+[yhc@localhost wildcard_file_practice]$ 
+```
 ### 5-3. 2023년 또는 2024년 백업 파일만 출력
 ```bash
 # 명령어를 작성하세요
