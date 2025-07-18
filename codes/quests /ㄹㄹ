@@ -227,9 +227,19 @@ data          document.pdf  log_access.txt    project_A         report1.txt  tem
 5. 복합 명령어 실습
 5-1. 파일 정리 시스템
 # 1단계: 모든 이미지 파일(.jpg, .png, .gif)을 images 디렉터리로 이동
-
+   ```   [yhc@localhost wildcard_file_practice]$ mv *.{jpg,png,gif} ./../wildcard_file_practice/images/
+mv: cannot stat '*.jpg': No such file or directory
+mv: cannot stat '*.png': No such file or directory
+mv: cannot stat '*.gif': No such file or directory
+```                                                     
 # 2단계: 모든 문서 파일(.pdf, .ppt, .xls, .md)을 documents 디렉터리로 이동
-
+```
+yhc@localhost wildcard_file_practice]$  mv *.{pdf,ppt,xls,md} ./documents/
+[yhc@localhost wildcard_file_practice]$ ls ./documents
+changelog.md  presentation.ppt  report1.txt  report3.txt
+document.pdf  readme.md         report2.txt  spreadsheet.xls
+[yhc@localhost wildcard_file_practice]$ 
+```
 # 3단계: 모든 데이터 파일(.csv, .dat)을 data 디렉터리로 이동 (없으면 생성)
 
 # 명령어들을 작성하세요:
