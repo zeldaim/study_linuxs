@@ -64,19 +64,74 @@ yhc@localhost shell_practice]$ nano data.txt
 2-1. 백업 스크립트 생성
 backup.sh 파일을 생성하여 다음 기능을 수행하는 스크립트를 작성하세요:
 현재 날짜와 시간 출력
+```
+[yhc@localhost shell_practice]$ chmod 777 backup.sh 
+[yhc@localhost shell_practice]$ ./backup.sh 
+Fri Jul 18 03:00:39 PM KST 2025
+[yhc@localhost shell_practice]$
+``` 
 data.txt 파일을 backup 디렉토리에 복사
 복사 완료 메시지 출력
 스크립트 파일 생성 및 실행 권한 부여 명령어를 작성하세요
+```
+[yhc@localhost shell_practice]$ nano data.txt 
+[yhc@localhost shell_practice]$ ./data.txt 
+bash: ./data.txt: Permission denied
+[yhc@localhost shell_practice]$ chmod 777 data.txt  ./data.txt 
+[yhc@localhost shell_practice]$ ./data.txt 
+cat: ' copy completed ': No such file or directory
+```
+
+
 2-2. 시스템 정보 출력 스크립트
 sysinfo.sh 스크립트를 생성하여 현재 사용자명, 현재 디렉토리, 디스크 사용량을 출력하는 스크립트를 작성하고 실행하세요.
 명령어를 작성하세요
+```
+[yhc@localhost shell_practice]$ chmod 777 sysinfo.sh 
+[yhc@localhost shell_practice]$ ./sysinfo.sh 
+total 16
+drwxr-xr-x. 2 yhc yhc 22 Jul 18 15:02 backup
+-rwxrwxrwx. 1 yhc yhc  8 Jul 18 14:56 backup.sh
+-rw-r--r--. 1 yhc yhc  0 Jul 18 14:42 config.conf
+-rwxrwxrwx. 1 yhc yhc 24 Jul 18 15:10 data.txt
+drwxr-xr-x. 2 yhc yhc  6 Jul 18 14:42 logs
+-rw-r--r--. 1 yhc yhc  0 Jul 18 14:42 notes.md
+drwxr-xr-x. 2 yhc yhc  6 Jul 18 14:42 scripts
+-rw-r--r--. 1 yhc yhc 36 Jul 18 14:43 server.conf
+-rwxrwxrwx. 1 yhc yhc  8 Jul 18 15:17 sysinfo.sh
+```
+[yhc@localhost shell_practice]$ 
 
 문제 3: && 연산자를 이용한 다중 명령어 실행
 3-1. 디렉토리 생성과 파일 생성
 projects 디렉토리를 생성하고, 성공하면 그 안에 readme.txt 파일을 생성하는 한 줄 명령어를 작성하세요.
+``` 
+[yhc@localhost shell_practice]$ mkdir ./projects/ && touch ./projects/ readme.txt 
+[yhc@localhost shell_practice]$ tree 
+.
+├── backup
+│   └── data.txt
+├── backup.sh
+├── config.conf
+├── data.txt
+├── logs
+├── notes.md
+├── projects
+├── readme.txt
+├── scripts
+├── server.conf
+└── sysinfo.sh
+```
 명령어를 작성하세요
 3-2. 파일 존재 확인과 내용 출력
 server.conf 파일이 존재하는지 확인하고, 존재하면 파일 내용을 출력하는 한 줄 명령어를 작성하세요.
+```
+[yhc@localhost shell_practice]$ ls ./server.conf && cat server.conf 
+./server.conf
+PORT=8080
+HOST=localhost
+DEBUG=true
+```
 명령어를 작성하세요
 3-3. 복합 작업 실행
 다음 작업을 && 연산자로 연결하여 한 줄로 실행하세요:
