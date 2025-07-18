@@ -139,8 +139,10 @@ logs 디렉토리로 이동
 access.log 파일 생성
 현재 디렉토리 내용 출력
 상위 디렉토리로 복귀
+```
 cd ./../logs/ && touch access.log && ls ./*/ && cd ./..
 
 ./..:
 backup     config.conf  logs      projects    scripts      sysinfo.sh
 backup.sh  data.txt     notes.md  readme.txt  server.conf
+```
