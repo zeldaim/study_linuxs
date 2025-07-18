@@ -53,7 +53,13 @@ DEBUG=true
 1-2. 기존 파일 수정
 nano 편집기로 data.txt 파일을 열어서 "Hello Linux World!" 텍스트를 추가하세요.
 명령어를 작성하세요
+```
+yhc@localhost shell_practice]$ nano data.txt
+[yhc@localhost shell_practice]$ cat data.txt 
+"Hello Linux World!"
+[yhc@localhost shell_practice]$ 
 
+```
 문제 2: 실행 가능한 쉘 스크립트 작성
 2-1. 백업 스크립트 생성
 backup.sh 파일을 생성하여 다음 기능을 수행하는 스크립트를 작성하세요:
