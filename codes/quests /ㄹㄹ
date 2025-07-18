@@ -209,6 +209,15 @@ backup_2024.tar  new_report.txt  old_report.txt
 # 명령어를 작성하세요:
 4-4. 조건부 파일 삭제
 # 확장자가 3글자가 아닌 파일들을 삭제하세요
+[yhc@localhost wildcard_file_practice]$ rm *.???? && ls *.?? 
+changelog.md  readme.md
+[yhc@localhost wildcard_file_practice]$ ls 
+archives      data1.csv     documents         log_error.txt     project_B    report2.txt
+backup        data2.csv     final_report.txt  logs              project_C    report3.txt
+changelog.md  data3.csv     images            log_system.txt    readme.md    scripts
+combined.txt  data_old.csv  license.txt       presentation.ppt  readme.txt   spreadsheet.xls
+data          document.pdf  log_access.txt    project_A         report1.txt  temp
+[yhc@localhost wildcard_file_practice]$ 
 
 # 힌트: 확장자가 .jpg, .png, .gif, .txt, .csv, .tar, .dat, .pdf, .ppt, .xls가 아닌 파일
 
