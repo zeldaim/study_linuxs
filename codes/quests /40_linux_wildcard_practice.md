@@ -246,7 +246,6 @@ report1.txt  report2.txt  report3.txt
 ### 7-3. 모든 하위 디렉터리에 `readme.txt` 파일 생성
 ```bash
 # 명령어를 작성하세요
-```
 [yhc@localhost wildcard_file_practice]$ touch readme.txt ./*
 [yhc@localhost wildcard_file_practice]$ ls 
 archives      data          document.pdf      log_access.txt    project_A   report1.txt      temp
@@ -294,7 +293,7 @@ script1.sh  script2.sh  test_script.sh
 changelog.md  data2.csv     document.pdf      log_access.txt  presentation.ppt  report2.txt
 config.conf   data3.csv     final_report.txt  log_error.txt   readme.md         report3.txt
 data1.csv     data_old.csv  license.txt       log_system.txt  report1.txt       spreadsheet.xls
-
+```
 ---
 
 ## 문제 8: 복잡한 패턴 매칭
