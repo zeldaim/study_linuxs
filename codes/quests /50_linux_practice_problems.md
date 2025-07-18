@@ -27,6 +27,29 @@ HOST=localhost
 DEBUG=true
 
 명령어를 작성하세요
+```
+[yhc@localhost Downloads]$ mkdir shell_practice && cd shell_practice && touch data.txt config.conf notes.md && mkdir scripts logs backup                                                                         
+[yhc@localhost shell_practice]$ nano server.conf 
+[yhc@localhost shell_practice]$ ls 
+backup  config.conf  data.txt  logs  notes.md  scripts  server.conf
+[yhc@localhost shell_practice]$ tree
+.
+├── backup
+├── config.conf
+├── data.txt
+├── logs
+├── notes.md
+├── scripts
+└── server.conf
+
+3 directories, 4 files
+[yhc@localhost shell_practice]$ cat ./server.conf 
+PORT=8080
+HOST=localhost
+DEBUG=true
+[yhc@localhost shell_practice]$ 
+
+```
 1-2. 기존 파일 수정
 nano 편집기로 data.txt 파일을 열어서 "Hello Linux World!" 텍스트를 추가하세요.
 명령어를 작성하세요
