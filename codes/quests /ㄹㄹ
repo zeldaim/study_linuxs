@@ -241,6 +241,60 @@ document.pdf  readme.md         report2.txt  spreadsheet.xls
 [yhc@localhost wildcard_file_practice]$ 
 ```
 # 3단계: 모든 데이터 파일(.csv, .dat)을 data 디렉터리로 이동 (없으면 생성)
+[yhc@localhost wildcard_file_practice]$ mkdir data1 && mv *.{csv,dat} 
+mv: target '*.dat' is not a directory
+[yhc@localhost wildcard_file_practice]$ mkdir data1 && mv -p *.{csv,dat} 
+mkdir: cannot create directory ‘data1’: File exists
+[yhc@localhost wildcard_file_practice]$ mkdir dat1 && mv -p *.{csv,dat} ./dat/ 
+mv: invalid option -- 'p'
+Try 'mv --help' for more information.
+[yhc@localhost wildcard_file_practice]$ mkdir dat1 && mv *.{csv,dat} ./dat/ 
+mkdir: cannot create directory ‘dat1’: File exists
+[yhc@localhost wildcard_file_practice]$ mkdir a  && mv *.{csv,dat} ./a/ 
+mkdir: cannot create directory ‘a’: File exists
+[yhc@localhost wildcard_file_practice]$ ls 
+a             dat1       data2.csv     final_report.txt  log_error.txt   project_B    report2.txt
+archives      data       data3.csv     images            logs            project_C    report3.txt
+backup        data1      data_old.csv  license.txt       log_system.txt  readme.txt   scripts
+combined.txt  data1.csv  documents     log_access.txt    project_A       report1.txt  temp
+[yhc@localhost wildcard_file_practice]$  mv *.{csv,dat} ./data/
+mv: cannot stat '*.dat': No such file or directory
+[yhc@localhost wildcard_file_practice]$  mv *.{csv,txt} ./data/
+mv: cannot stat '*.csv': No such file or directory
+[yhc@localhost wildcard_file_practice]$  mv ./*/*.{csv,txt} ./data/
+mv: './data/data1.csv' and './data/data1.csv' are the same file
+mv: './data/data2.csv' and './data/data2.csv' are the same file
+mv: './data/data3.csv' and './data/data3.csv' are the same file
+mv: './data/data_old.csv' and './data/data_old.csv' are the same file
+mv: will not overwrite just-created './data/data1.csv' with './temp/data1.csv'
+mv: will not overwrite just-created './data/data2.csv' with './temp/data2.csv'
+mv: will not overwrite just-created './data/data3.csv' with './temp/data3.csv'
+mv: will not overwrite just-created './data/new_report.txt' with './backup/new_report.txt'
+mv: will not overwrite just-created './data/old_report.txt' with './backup/old_report.txt'
+mv: './data/combined.txt' and './data/combined.txt' are the same file
+mv: './data/final_report.txt' and './data/final_report.txt' are the same file
+mv: './data/license.txt' and './data/license.txt' are the same file
+mv: './data/log_access.txt' and './data/log_access.txt' are the same file
+mv: './data/log_error.txt' and './data/log_error.txt' are the same file
+mv: './data/log_system.txt' and './data/log_system.txt' are the same file
+mv: './data/readme.txt' and './data/readme.txt' are the same file
+mv: './data/report1.txt' and './data/report1.txt' are the same file
+mv: './data/report2.txt' and './data/report2.txt' are the same file
+mv: './data/report3.txt' and './data/report3.txt' are the same file
+mv: will not overwrite just-created './data/report1.txt' with './documents/report1.txt'
+mv: will not overwrite just-created './data/report2.txt' with './documents/report2.txt'
+mv: will not overwrite just-created './data/report3.txt' with './documents/report3.txt'
+mv: will not overwrite just-created './data/log_access.txt' with './logs/log_access.txt'
+mv: will not overwrite just-created './data/log_error.txt' with './logs/log_error.txt'
+mv: will not overwrite just-created './data/log_system.txt' with './logs/log_system.txt'
+mv: will not overwrite just-created './data/final_report.txt' with './temp/final_report.txt'
+mv: will not overwrite just-created './data/license.txt' with './temp/license.txt'
+mv: will not overwrite just-created './data/log_access.txt' with './temp/log_access.txt'
+mv: will not overwrite just-created './data/log_error.txt' with './temp/log_error.txt'
+mv: will not overwrite just-created './data/log_system.txt' with './temp/log_system.txt'
+mv: will not overwrite just-created './data/report1.txt' with './temp/report1.txt'
+mv: will not overwrite just-created './data/report2.txt' with './temp/report2.txt'
+mv: will not overwrite just-created './data/report3.txt' with './temp/report3.txt'
 
 # 명령어들을 작성하세요:
 5-2. 백업 및 정리 작업
