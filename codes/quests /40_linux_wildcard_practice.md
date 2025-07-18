@@ -247,6 +247,53 @@ report1.txt  report2.txt  report3.txt
 ```bash
 # 명령어를 작성하세요
 ```
+[yhc@localhost wildcard_file_practice]$ touch readme.txt ./*
+[yhc@localhost wildcard_file_practice]$ ls 
+archives      data          document.pdf      log_access.txt    project_A   report1.txt      temp
+backup        data1.csv     documents         log_error.txt     project_B   report2.txt
+changelog.md  data2.csv     final_report.txt  logs              project_C   report3.txt
+combined.txt  data3.csv     images            log_system.txt    readme.md   scripts
+config.conf   data_old.csv  license.txt       presentation.ppt  readme.txt  spreadsheet.xls
+[yhc@localhost wildcard_file_practice]$ touch readme.txt ./*
+[yhc@localhost wildcard_file_practice]$ ls ./*
+./changelog.md  ./data2.csv     ./final_report.txt  ./log_system.txt    ./report1.txt
+./combined.txt  ./data3.csv     ./license.txt       ./presentation.ppt  ./report2.txt
+./config.conf   ./data_old.csv  ./log_access.txt    ./readme.md         ./report3.txt
+./data1.csv     ./document.pdf  ./log_error.txt     ./readme.txt        ./spreadsheet.xls
+
+./archives:
+backup_2024.tar  new_report.txt  old_report.txt
+
+./backup:
+data1.csv  data3.csv         license.txt     log_error.txt   new_report.txt  report1.txt  report3.txt
+data2.csv  final_report.txt  log_access.txt  log_system.txt  old_report.txt  report2.txt
+
+./data:
+2024  file_001.dat  file_002.dat  file_010.dat
+
+./documents:
+report1.txt  report2.txt  report3.txt
+
+./images:
+image1.jpg  image2.jpg  image3.png
+
+./logs:
+log_01  log_03  log_05  log_07  log_09  log_11  log_access.txt  log_system.txt
+log_02  log_04  log_06  log_08  log_10  log_12  log_error.txt
+
+./project_A:
+
+./project_B:
+
+./project_C:
+
+./scripts:
+script1.sh  script2.sh  test_script.sh
+
+./temp:
+changelog.md  data2.csv     document.pdf      log_access.txt  presentation.ppt  report2.txt
+config.conf   data3.csv     final_report.txt  log_error.txt   readme.md         report3.txt
+data1.csv     data_old.csv  license.txt       log_system.txt  report1.txt       spreadsheet.xls
 
 ---
 
