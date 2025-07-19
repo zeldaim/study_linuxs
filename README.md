@@ -8,6 +8,6 @@
 [안내글](codes/20_dir.sh)
 
 - Quests 
-## [첫번째](codes/Quests /10_basic_linux_commands.md)<br>
+## [첫번째](cod)<br>
 ## [두번째](https://github.com/zeldaim/study_linuxs/blob/main/codes/10_basic_linux_commands.m)<br>
 ## [세번째]()
