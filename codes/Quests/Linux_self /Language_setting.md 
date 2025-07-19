@@ -1,0 +1,24 @@
+## 리눅스 언어 한국어에서 영어로 바꾸기
+```
+[yhc@localhost ~]$ tree
+.
+├── 공개
+├── 다운로드
+├── 문서
+├── 바탕화면
+├── 비디오
+├── 사진
+├── 서식
+└── 음악
+
+8 directories, 0 files
+[yhc@localhost ~]$ cd ./c
+bash: cd: ./c: 그런 파일이나 디렉터리가 없습니다
+[yhc@localhost ~]$ ./
+bash: ./: 디렉터리입니다
+[yhc@localhost ~]$ nano ~/.bashrc
+[yhc@localhost ~]$ source ~/.bashrc 
+[yhc@localhost ~]$ ./c
+bash: ./c: No such file or directory
+[yhc@localhost ~]$ ./
+```
