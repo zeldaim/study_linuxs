@@ -7,6 +7,6 @@
 - 두번째
 [안내글](codes/20_dir.sh)
 
-- Quests <br>
-- [250716](https://github.com/zeldaim/study_linuxs/blob/main/codes/10_basic_linux_commands.md)<br>
-- [250716](https://github.com/zeldaim/study_linuxs/blob/main/codes/10_basic_linux_commands.m)
+- Quests 
+- [첫번째](https://github.com/zeldaim/study_linuxs/blob/main/codes/10_basic_linux_commands.md)<br>
+- [두번째](https://github.com/zeldaim/study_linuxs/blob/main/codes/10_basic_linux_commands.m)
