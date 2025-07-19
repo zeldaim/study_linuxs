@@ -1,6 +1,6 @@
 # study_linuxs
 ## powershell(GUI & CUI)
-연습 글을 올립니다.
+- Searching Command: codes/Quests /10.PowerShell.sh
 
 - 첫번째
 [안내글](codes/10_powershell.sh )
