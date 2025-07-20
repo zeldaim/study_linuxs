@@ -28,7 +28,8 @@ DEBUG=true
 
 명령어를 작성하세요
 ```
-[yhc@localhost Downloads]$ mkdir shell_practice && cd shell_practice && touch data.txt config.conf notes.md && mkdir scripts logs backup                                                                         
+## 실습환경 설정##
+[yhc@localhost Downloads]$ mkdir shell_practice && cd shell_practice && touch data.txt config.conf notes.md && mkdir scripts logs backup                                                                   ## 실습시작 ## 
 [yhc@localhost shell_practice]$ nano server.conf 
 [yhc@localhost shell_practice]$ ls 
 backup  config.conf  data.txt  logs  notes.md  scripts  server.conf
@@ -43,6 +44,7 @@ backup  config.conf  data.txt  logs  notes.md  scripts  server.conf
 └── server.conf
 
 3 directories, 4 files
+
 [yhc@localhost shell_practice]$ cat ./server.conf 
 PORT=8080
 HOST=localhost
@@ -64,14 +66,34 @@ yhc@localhost shell_practice]$ nano data.txt
 2-1. 백업 스크립트 생성
 backup.sh 파일을 생성하여 다음 기능을 수행하는 스크립트를 작성하세요:
 현재 날짜와 시간 출력
-```
-[yhc@localhost shell_practice]$ chmod 777 backup.sh 
-[yhc@localhost shell_practice]$ ./backup.sh 
-Fri Jul 18 03:00:39 PM KST 2025
-[yhc@localhost shell_practice]$
-``` 
 data.txt 파일을 backup 디렉토리에 복사
 복사 완료 메시지 출력
+```
+[yhc@localhost shell_practice]$ nano ./backup.sh  
+[yhc@localhost shell_practice]$ chmod +x ./backup.sh
+[yhc@localhost shell_practice]$ ./backup.sh 
+Sun Jul 20 11:14:55 PM KST 2025
+복사 완료
+[yhc@localhost shell_practice]$ tree 
+.
+├── backup
+│   └── data.txt
+├── backup.sh
+├── config.conf
+├── data.txt
+├── logs
+├── notes.md
+└── scripts
+```
+```
+## backup.sh  스크림트 내용##
+ [yhc@localhost shell_practice]$ cat backup.sh 
+date 
+cp data.txt  ./backup/ 
+echo "복사 완료"
+```
+
+
 스크립트 파일 생성 및 실행 권한 부여 명령어를 작성하세요
 ```
 [yhc@localhost shell_practice]$ nano data.txt 
