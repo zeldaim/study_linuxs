@@ -79,7 +79,7 @@ ls {test1,test2}.log
 ### 3-3. 파일명이 `a`부터 `f`로 시작하는 모든 파일 출력
 ```bash
 # 명령어를 작성하세요
-```
+
 [yhc@localhost wildcard_file_practice]$ ls -l [a-f]*.*
 -rw-r--r--. 1 yhc yhc 0 Jul 17 17:32 changelog.md
 -rw-r--r--. 1 yhc yhc 0 Jul 17 17:31 config.conf
