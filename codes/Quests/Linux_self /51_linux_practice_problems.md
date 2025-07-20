@@ -160,7 +160,12 @@ test\_script.sh 파일을 생성하고 소유자에게만 모든 권한을 부�
 -rwx------. 1 yhc yhc 0 Jul 
 ### 4-2. 그룹 권한 추가
 
-test\_script.sh 파일에 그룹 사용자에게 읽기 및 실행 권한을 추가하세요.
+test\_script.sh 파일에 그룹 사용자에게 읽기 및 실행 권한을 추가하세요.     
+[yhc@localhost new_project]$ ls -l test_script.sh 
+-rwxr-x---. 1 yhc yhc 0 Jul 20 10:40 test_script.sh
+[yhc@localhost new_project]$ ls -l test_script.sh 
+-rwxr-x---. 1 yhc yhc 0 Jul 20 10:40 test_script.sh
+
 
 **명령어를 작성하세요:**
 
@@ -173,6 +178,11 @@ test\_script.sh 파일에 그룹 사용자에게 읽기 및 실행 권한을 추
 **명령어를 작성하세요:**
 
 \# 파일 권한 확인
+[yhc@localhost new_project]$ ls -l *.*
+-rwx------. 1 yhc yhc 17 Jul 20 10:35 quick_test.sh
+-rwxr-x---. 1 yhc yhc  0 Jul 20 10:40 test_script.sh
+-rw-r--r--. 1 yhc yhc  0 Jul 20 10:00 test.txt
+[yhc@localhost new_project]$ 
 
 ### 4-4. 실행 권한 제거
 
@@ -181,7 +191,10 @@ test\_script.sh 파일에서 모든 사용자의 실행 권한을 제거하세�
 **명령어를 작성하세요:**
 
 \# 모든 사용자의 실행 권한 제거
-
+[yhc@localhost new_project]$ chmod 640 test_script.sh 
+[yhc@localhost new_project]$ ls -l test_script.sh 
+-rw-r-----. 1 yhc yhc 0 Jul 20 10:40 test_script.sh
+[yhc@localhost new_project]$ 
 ## 문제 5: 종합 실습
 
 ### 5-1. 자동화 스크립트 작성
@@ -197,15 +210,36 @@ test\_script.sh 파일에서 모든 사용자의 실행 권한을 제거하세�
 \#\!/bin/bash
 
 \# setup.sh 스크립트 내용을 작성하세요
-
+[yhc@localhost new_project]$ mkdir -p logs && nano date.sh && date >date.sh && nano logs/setup.log && cat ./date.sh >logs/setup.log && echo "설정완료"  
+설정완료
+## date.sh라는 임의의 파일을 만들어 자동화시켰습니다. 
 ### 5-2. 스크립트 실행 및 검증
 
-setup.sh 스크립트를 실행하고, 로그 파일이 제대로 생성되었는지 확인하는 명령어를 작성하세요.
+setup.sh 스크립트를 실행하고, 로그 파일이 제대로 생성되었는지 확인하는 
+명령어를 작성하세요.
+```
+[yhc@localhost new_project]$ nano setup.sh 
+[yhc@localhost new_project]$ chmod 777 ./setup.sh 
+[yhc@localhost new_project]$ ./setup.sh 
+ls: cannot access './kogs/setup.log': No such file or directory
+Sun Jul 20 12:13:44 PM KST 2025
+[yhc@localhost new_project]$ nano setup.sh 
+[yhc@localhost new_project]$ nano setup.sh 
+[yhc@localhost new_project]$ ./setup.sh 
+-rw-r--r--. 1 yhc yhc 32 Jul 20 12:13 ./logs/setup.log
+Sun Jul 20 12:13:44 PM KST 2025
+[yhc@localhost new_project]$ 
+```
 
 **명령어를 작성하세요:**
 
 \# setup.sh 실행 권한 부여 후 실행하고, 로그 파일 내용 확인
-
+[yhc@localhost new_project]$ nano setup.sh 
+[yhc@localhost new_project]$ ./setup.sh 
+bash: ./setup.sh: Permission denied
+[yhc@localhost new_project]$ chmod 777 ./setup.sh 
+[yhc@localhost new_project]$ ./setup.sh 
+Sun Jul 20 12:13:44 PM KST 2025
 ---
 
 ### **🔧 문제 7: 디렉토리 및 권한 실습**
@@ -215,6 +249,16 @@ setup.sh 스크립트를 실행하고, 로그 파일이 제대로 생성되었�
 `project_logs` 디렉토리를 생성하고, 사용자(User)에게만 **쓰기 권한을 제거**한 후 권한을 확인하는 명령어를 작성하세요.
 
 명령어를 작성하세요:
+[yhc@localhost new_project]$ mkdir -p project_logs && chmod 577 ./project_logs && ls -l   
+total 12
+-rwxrwxrwx. 1 yhc yhc 32 Jul 20 12:13 date.sh
+drwxr-xr-x. 2 yhc yhc 23 Jul 20 12:10 logs
+dr-xrwxrwx. 2 yhc yhc  6 Jul 20 12:41 project_logs
+-rwx------. 1 yhc yhc 17 Jul 20 10:35 quick_test.sh
+-rwxrwxrwx. 1 yhc yhc 45 Jul 20 12:29 setup.sh
+-rw-r-----. 1 yhc yhc  0 Jul 20 10:40 test_script.sh
+-rw-r--r--. 1 yhc yhc  0 Jul 20 10:00 test.txt
+
 
 \# project\_logs 디렉토리 생성 후 User의 쓰기 권한 제거, 권한 확인
 
@@ -235,12 +279,34 @@ nano에서 작성할 내용 예시:
 \# backup 디렉토리 존재 출력
 
 ---
+[yhc@localhost new_project]$ ./check_dir.sh 
+total 16
+-rwxrwxrwx. 1 yhc yhc 112 Jul 20 13:17 check_dir.sh
+-rwxrwxrwx. 1 yhc yhc  32 Jul 20 12:13 date.sh
+drwxr-xr-x. 2 yhc yhc  23 Jul 20 12:10 logs
+dr-xrwxrwx. 2 yhc yhc   6 Jul 20 12:41 project_logs
+-rwx------. 1 yhc yhc  17 Jul 20 10:35 quick_test.sh
+-rwxrwxrwx. 1 yhc yhc  45 Jul 20 12:29 setup.sh
+-rw-r-----. 1 yhc yhc   0 Jul 20 10:40 test_script.sh
+-rw-r--r--. 1 yhc yhc   0 Jul 20 10:00 test.txt
+There is not backup_directory
+[yhc@localhost new_project]$  cat check_dir.sh 
+ls -l 
+if [ -d ./backup ]; 
+then touch ./backup/checked.txt 
+
+else 
+ echo "There is not backup_directory" 
+fi  
 
 #### **7-3. 다중 명령어 조건 실행**
 
 `project_logs` 디렉토리로 이동한 후, 이동에 성공한 경우 `log.txt` 파일을 만들고 `"로그 생성 완료"` 메시지를 출력하는 명령어를 작성하세요.
 
 명령어를 작성하세요:
+[yhc@localhost project_logs]$ cd ./..
+[yhc@localhost new_project]$ chmod 777 ./project_logs && cd ./project_logs &&  touch logs.txt && echo "로그 생성 완료" > ./log.txt && cat log.txt 
+로그 생성 완료
 
 \# 디렉토리 이동 && 파일 생성 && 메시지 출력
 
@@ -251,6 +317,10 @@ nano에서 작성할 내용 예시:
 앞서 작성한 `check_dir.sh` 파일에 대해 **사용자(User)** 에게만 실행 권한을 부여하고 현재 권한을 확인하는 명령어를 작성하세요.
 
 명령어를 작성하세요:
+[yhc@localhost new_project]$ chmod 766 check_dir.sh && ls -l check_dir.sh 
+-rwxrw-rw-. 1 yhc yhc 112 Jul 20 13:17 check_dir.sh
+[yhc@localhost new_project]$ 
+
 
 \# 사용자에게만 실행 권한 부여 및 권한 확인
 
