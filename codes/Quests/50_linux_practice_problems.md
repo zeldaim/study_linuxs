@@ -126,8 +126,16 @@ tmpfs                348M  7.2M  341M   3% /run
 tmpfs                174M  108K  174M   1% /run/user/1000
 /dev/sr0              12G   12G     0 100% /run/media/yhc/Rocky-9-6-x86_64-dvd
 
-```
 [yhc@localhost shell_practice]$ 
+```
+```
+## sysinfo.sh 스크립트 내용 출력## 
+[yhc@localhost shell_practice]$ cat ./sysinfo.sh 
+echo "사용자명 :$user" 
+echo " 현재디렉토리:$(pwd)"
+echo " 디스크사용량:" 
+df -h 
+```
 
 문제 3: && 연산자를 이용한 다중 명령어 실행
 3-1. 디렉토리 생성과 파일 생성
@@ -158,6 +166,13 @@ server.conf 파일이 존재하는지 확인하고, 존재하면 파일 내용�
 PORT=8080
 HOST=localhost
 DEBUG=true
+```
+```
+##존재확인 추가##
+[yhc@localhost shell_practice]$ if [ -e server.conf ]; then  cat server.conf ; else echo "it is not exist"; fi 
+PORT=8080
+HOST=localhost 
+DEBUG=true 
 ```
 명령어를 작성하세요
 3-3. 복합 작업 실행
