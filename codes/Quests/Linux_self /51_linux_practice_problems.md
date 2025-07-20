@@ -53,6 +53,7 @@ hello.sh 파일을 nano로 열어 다음 내용을 작성하세요:
 echo "안녕하세요\! 리눅스 세계에 오신 것을 환영합니다."
 
 **명령어를 작성하세요:**
+```
 [yhc@localhost shell_practice]$ nano hello.sh 
 [yhc@localhost shell_practice]$ ./hello.sh 
 bash: ./hello.sh: Permission denied
@@ -61,7 +62,7 @@ bash: ./hello.sh: Permission denied
 [yhc@localhost shell_practice]$ chmod 777 hello.sh 
 [yhc@localhost shell_practice]$ ./hello.sh 
 Welcome to Linux-World
-
+```
 \# nano 편집기로 hello.sh 파일 열기
 
 ### 1-2. 파일 내용 수정
@@ -69,13 +70,14 @@ Welcome to Linux-World
 system\_info.txt 파일을 nano로 열어 현재 시스템 정보를 기록하는 내용을 작성하세요.
 
 **명령어를 작성하세요:**
+```
 [yhc@localhost shell_practice]$ date 
 Sun Jul 20 09:45:54 AM KST 2025
 [yhc@localhost shell_practice]$ nano system_info.txt 
 [yhc@localhost shell_practice]$ cat system_info.txt 
 Sun Jul 20 09:45:54 AM KST 2025 
 [yhc@localhost shell_practice]$ 
-
+```
 
 \# nano 편집기로 system\_info.txt 파일 열기
 
