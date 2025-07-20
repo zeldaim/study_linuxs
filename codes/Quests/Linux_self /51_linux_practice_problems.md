@@ -125,8 +125,7 @@ yhc@localhost shell_practice]$ ./backup.sh
 
 \# new\_project 디렉터리 생성 후 성공하면 이동
 [yhc@localhost shell_practice]$ mkdir new_project && cd ./new_project/ 
-[yhc@localhost new_project]$ 
-
+[yhc@localhost new_project]
 ### 3-2. 파일 생성 및 편집
 
 test.txt 파일을 생성하고 성공하면 nano로 편집하는 명령어를 작성하세요.
@@ -142,6 +141,8 @@ test.txt 파일을 생성하고 성공하면 nano로 편집하는 명령어를 �
 **명령어를 작성하세요:**
 
 \# quick\_test.sh 파일에 "echo 'Hello World'" 내용 저장 후 실행 권한 부여 후 실행
+[yhc@localhost new_project]$ nano quick_test.sh && echo "echo "hello world""  >quick_test.sh && chmod 700 quick_test.sh && ./quick_test.sh  
+hello world
 
 ## 문제 4: chmod를 이용한 권한 조정
 
@@ -154,7 +155,9 @@ test\_script.sh 파일을 생성하고 소유자에게만 모든 권한을 부�
 \# test\_script.sh 파일 생성
 
 \# 소유자에게만 읽기, 쓰기, 실행 권한 부여 (700)
-
+[yhc@localhost new_project]$ touch test_script.sh && chmod 700 test_script.sh 
+[yhc@localhost new_project]$ ls -l test_script.sh 
+-rwx------. 1 yhc yhc 0 Jul 
 ### 4-2. 그룹 권한 추가
 
 test\_script.sh 파일에 그룹 사용자에게 읽기 및 실행 권한을 추가하세요.
