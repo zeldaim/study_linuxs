@@ -109,18 +109,23 @@ cat: ' copy completed ': No such file or directory
 sysinfo.sh 스크립트를 생성하여 현재 사용자명, 현재 디렉토리, 디스크 사용량을 출력하는 스크립트를 작성하고 실행하세요.
 명령어를 작성하세요
 ```
-[yhc@localhost shell_practice]$ chmod 777 sysinfo.sh 
+[yhc@localhost shell_practice]$ nano sysinfo.sh 
 [yhc@localhost shell_practice]$ ./sysinfo.sh 
-total 16
-drwxr-xr-x. 2 yhc yhc 22 Jul 18 15:02 backup
--rwxrwxrwx. 1 yhc yhc  8 Jul 18 14:56 backup.sh
--rw-r--r--. 1 yhc yhc  0 Jul 18 14:42 config.conf
--rwxrwxrwx. 1 yhc yhc 24 Jul 18 15:10 data.txt
-drwxr-xr-x. 2 yhc yhc  6 Jul 18 14:42 logs
--rw-r--r--. 1 yhc yhc  0 Jul 18 14:42 notes.md
-drwxr-xr-x. 2 yhc yhc  6 Jul 18 14:42 scripts
--rw-r--r--. 1 yhc yhc 36 Jul 18 14:43 server.conf
--rwxrwxrwx. 1 yhc yhc  8 Jul 18 15:17 sysinfo.sh
+bash: ./sysinfo.sh: Permission denied
+[yhc@localhost shell_practice]$ chmod +x ./sysinfo.sh 
+[yhc@localhost shell_practice]$ ./sysinfo.sh 
+사용자명 :
+ 현재디렉토리:/home/yhc/shell_practice/new_project/shell_practice
+ 디스크사용량:
+Filesystem           Size  Used Avail Use% Mounted on
+devtmpfs             4.0M     0  4.0M   0% /dev
+tmpfs                870M     0  870M   0% /dev/shm
+tmpfs                348M  7.2M  341M   3% /run
+/dev/mapper/rl-root   17G  5.7G   12G  34% /
+/dev/nvme0n1p1       960M  366M  595M  39% /boot
+tmpfs                174M  108K  174M   1% /run/user/1000
+/dev/sr0              12G   12G     0 100% /run/media/yhc/Rocky-9-6-x86_64-dvd
+
 ```
 [yhc@localhost shell_practice]$ 
 
