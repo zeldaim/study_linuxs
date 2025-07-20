@@ -185,7 +185,6 @@ df -h
 `server.conf` 파일이 존재하는지 확인하고, 존재하면 파일 내용을 출력하는 한 줄 명령어를 작성하세요.
 ```
 # **명령어를 작성하세요**
-```
 [yhc@localhost shell_practice]$ ls ./server.conf && cat server.conf 
 ./server.conf
 PORT=8080
@@ -200,13 +199,6 @@ HOST=localhost
 DEBUG=true 
 ```
 ### **3-3. 복합 작업 실행**
-```
-cd ./../logs/ && touch access.log && ls ./*/ && cd ./..
-
-./..:
-backup     config.conf  logs      projects    scripts      sysinfo.sh
-backup.sh  data.txt     notes.md  readme.txt  server.conf
-```
 
 다음 작업을 && 연산자로 연결하여 한 줄로 실행하세요:
 
@@ -216,6 +208,10 @@ backup.sh  data.txt     notes.md  readme.txt  server.conf
 4. 상위 디렉토리로 복귀
 
 # 
+```
+cd ./../logs/ && touch access.log && ls ./*/ && cd ./..
 
-- 
-
+./..:
+backup     config.conf  logs      projects    scripts      sysinfo.sh
+backup.sh  data.txt     notes.md  readme.txt  server.conf
+```
