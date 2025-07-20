@@ -89,9 +89,11 @@ backup.sh 파일을 만들어 다음 기능을 수행하는 스크립트를 작�
 
 - 현재 날짜 출력  
 - "백업을 시작합니다" 메시지 출력  
-- 현재 디렉터리의 파일 목록 출력
-
+- 현재 디렉터리의 파일 목록 출력 </br></br>
+**명령어를 작성하세요:**
 ```
+
+[yhc@localhost new_project]$ nano backup_sh 
 [yhc@localhost new_project]$ chmod +x backup_sh 
 [yhc@localhost new_project]$ ./backup_sh 
 Sun Jul 20 02:26:11 PM KST 2025
@@ -99,7 +101,16 @@ Sun Jul 20 02:26:11 PM KST 2025
 backup_sh     date.sh  project_logs   setup.sh	      test.txt
 check_dir.sh  logs     quick_test.sh  test_script.sh
 ```
-**명령어를 작성하세요:**
+***shell script 내용***
+```
+[yhc@localhost new_project]$ cat backup_sh 
+#!/bin/bash
+ 
+date 
+ echo "백업을 시작합니다." 
+ls  
+```
+
 
 \# nano로 backup.sh 파일 생성 및 편집
 
