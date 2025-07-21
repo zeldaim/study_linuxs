@@ -309,7 +309,29 @@ drwxr-xr-x. 2 root managers  6  7월 21 21:57 project_c
 **명령어를 작성하세요:**
 
 - \# 6-1 답안 작성란  
--   
+-
+ ``` 
+[root@localhost permission_practice]# umask 
+0022
+[root@localhost permission_practice]# umask 027 
+[root@localhost permission_practice]# mkdir -p new && touch new.txt 
+[root@localhost permission_practice]# ls -l 
+합계 0
+-rwxr-xr-x. 1 root root  0  7월 21 22:59 ' '
+drwxr-xr-x. 5 root root 48  7월 21 21:57  backup
+drwxr-xr-x. 4 root root 41  7월 21 21:57  company
+-rw-r--r--. 1 root root  0  7월 22 00:40  devman
+drwxr-xr-x. 4 root root 30  7월 21 21:57  logs
+drwxr-x---. 2 root root  6  7월 22 03:46  new
+-rw-r-----. 1 root root  0  7월 22 03:43  new.txt
+drwxr-xr-x. 7 root root 69  7월 21 21:57  private
+drwxr-xr-x. 5 root root 53  7월 21 21:57  shared
+```
+```
+[root@localhost permission_practice]# umask 0022
+[root@localhost permission_practice]# umask 
+0022
+```
 - 
 
 
@@ -342,8 +364,28 @@ drwxr-xr-x. 2 root managers  6  7월 21 21:57 project_c
 **명령어를 작성하세요:**
 
 - \# 8-1 답안 작성란  
--   
 - 
+ ```
+ [root@localhost permission_practice]# chgrp developers shared/tools/deploy.sh 
+[root@localhost permission_practice]# chmod 700 shared/tools/deploy.sh 
+[root@localhost permission_practice]# ls -la shared/tools/deploy.sh 
+-rwx------. 1 root developers 37  7월 21 23:09 shared/tools/deploy.sh
+[root@localhost permission_practice]# 
+```
+- 
+```
+[root@localhost permission_practice]# sudo groupadd aidi
+[root@localhost permission_practice]# sudo usermod -a -G aidi alice 
+[root@localhost permission_practice]# sudo usermod -a -G aidi diana 
+[root@localhost permission_practice]# chgrp aidi shared/tools/backup.sh 
+[root@localhost permission_practice]# chmod 070 shared/tools/backup.sh 
+```
+```
+[root@localhost permission_practice]# chmod u=x,g-x company/departments/dev/build.sh 
+[root@localhost permission_practice]# ls -l company/departments/dev/build.sh 
+---x---r--. 1 alice root 32  7월 21 23:09 company/departments/dev/build.sh
+[root@localhost permission_practice]# 
+```
 
 
   ### **8-2. 시스템 스크립트 보안 설정**
@@ -357,11 +399,19 @@ drwxr-xr-x. 2 root managers  6  7월 21 21:57 project_c
 **명령어를 작성하세요:**
 
 - \# 8-2 답안 작성란  
+-  
+```
+[root@localhost permission_practice]# sudo chown root:root ./system_check.sh && sudo chmod 700 ./system_check.sh
+```   
 -   
--   
-    
+ ```
+ [root@localhost permission_practice]# chmod u+s system_check.sh
+ ```   
   ---
-
+ ```
+ [root@localhost permission_practice]# sudo touch ./system_check.log && sudo chown root:root ./system_check.log &&
+sudo chmod 664 ./system_check.log
+```
   ## **9\. 디렉터리별 접근 제어**
 
   ### **9-1. 계층적 접근 제어**
@@ -376,10 +426,25 @@ drwxr-xr-x. 2 root managers  6  7월 21 21:57 project_c
 **명령어를 작성하세요:**
 
 - \# 9-1 답안 작성란  
--   
 - 
+```
+[root@localhost permission_practice]# chmod 744 company
+```
+```
+[root@localhost permission_practice]# chmod 550 company/departments/
+```
+- 
+```
+[root@localhost permission_practice]# getent group managers
+managers:x:1007:diana,alice
+[root@localhost permission_practice]# chgrp managers company/departments/finance/ 
+[root@localhost permission_practice]# chmod 550 company/departments/finance/
+```
+```
+[root@localhost permission_practice]# chmod 500 company/projects/
+[root@localhost permission_practice]# 
 
-
+```
   ### **9-2. 임시 작업 공간 설정**
 
 임시 작업을 위한 공간을 다음과 같이 설정하세요:
@@ -392,8 +457,11 @@ drwxr-xr-x. 2 root managers  6  7월 21 21:57 project_c
 
 - \# 9-2 답안 작성란  
 -   
--   
-    
+- 
+```  
+[root@localhost permission_practice]# mkdir -p temp 
+[root@localhost permission_practice]# chmod 777 temp 
+```    
   ---
 
   ## **10\. 백업 및 아카이브 권한 관리**
@@ -411,8 +479,25 @@ drwxr-xr-x. 2 root managers  6  7월 21 21:57 project_c
 
 - \# 10-1 답안 작성란  
 -   
+```
+[root@localhost permission_practice]# sudo chgrp developers backup/daily && sudo chmod 770 backup/daily
+```
+```
+[root@localhost permission_practice]# sudo chgrp managers backup/weekly && sudo chmod 770 backup/weekly
+```
 -   
-    
-  ---
+```
+[root@localhost permission_practice]# sudo chown root:root backup/monthly && sudo chmod 700 backup/monthly
+[root@localhost permission_practice]# 
 
+```
+  ---
+```
+[root@localhost permission_practice]# touch autobackup.sh 
+[root@localhost permission_practice]# nano autobackup.sh 
+[root@localhost permission_practice]# cat autobackup.sh 
+touch backup{1..10}.txt 
+chmod 440 backup{1..10).txt 
+[root@localhost permission_practice]#
+```
   
