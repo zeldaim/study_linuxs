@@ -125,7 +125,8 @@ drwxr-xr-x. 2 root root        6 Jul 21 17:10 marketing
 **명령어를 작성하세요:**
 
 - \# 1-2 답안 작성란   
--  ```
+- 
+ ```
 [root@localhost ~]# chown alice private/alice
  [root@localhost ~]# ls -l private
 total 0
