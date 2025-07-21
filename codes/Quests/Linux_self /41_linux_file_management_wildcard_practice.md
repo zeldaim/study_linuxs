@@ -108,9 +108,13 @@ A  B  C
 [yhc@localhost wildcard_file_practice]$ 
 ```
 ### 2-2. 특정 패턴 파일 복사
-
+```
 \# "report"로 시작하는 모든 파일을 documents 디렉터리로 복사하세요
-
+[yhc@localhost wildcard_file_practice]$ cp report* ./documents/
+[yhc@localhost wildcard_file_practice]$ ls ./documents/ 
+report1.txt  report2.txt  report3.txt
+[yhc@localhost wildcard_file_practice]$ 
+```
 ### 2-3. 숫자가 포함된 파일 복사
 
 \# 파일명에 숫자가 포함된 모든 이미지 파일(.jpg, .png)을 images 디렉터리로 복사하세요
