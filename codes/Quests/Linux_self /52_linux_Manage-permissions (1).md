@@ -169,8 +169,19 @@ drwxr-xr-x. 5 root root   53  7월 21 21:57 ..
 **명령어를 작성하세요:**
 
 - \# 2-2 답안 작성란  
--   
--   
+-   ```
+[root@localhost permission_practice]# sudo chgrp developers company/projects/project_a && sudo chmod 770 company/projects/project_a
+[root@localhost permission_practice]#
+```
+```
+[root@localhost permission_practice]# sudo groupadd aldi      
+[root@localhost permission_practice]# sudo usermod -a -G  aldi alice && sudo usermod -a -G aldi bob
+[root@localhost permission_practice]# 
+[root@localhost permission_practice]# chgrp aldi company/projects/project_b/
+[root@localhost permission_practice]# chmod 550 company/projects/project_b/
+[root@localhost permission_practice]# 
+
+```  
     
   ---
 
