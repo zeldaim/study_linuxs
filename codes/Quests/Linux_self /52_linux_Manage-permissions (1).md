@@ -249,7 +249,17 @@ drwxr-xr-x. 5 root root   53  7월 21 21:57 ..
 **명령어를 작성하세요:**
 
 - \# 4-1 답안 작성란  
--   
+- 
+ ``` 
+[root@localhost permission_practice]# chown -R alice company/departments/dev/
+[root@localhost permission_practice]# chgrp -R managers company/departments/hr/ 
+[root@localhost permission_practice]# ls -l company/departments/hr/
+합계 4
+-rwxr-xr-x. 1 root managers  0  7월 21 22:21 contracts.pdf
+-rwxr-xr-x. 1 root managers  0  7월 21 22:21 employees.xlsx
+-rwxr-xr-x. 1 root managers  0  7월 21 22:21 policies.txt
+-rwxr-xr-x. 1 root managers 25  7월 21 23:33 salaries
+```
 - 
 
 
@@ -263,9 +273,26 @@ drwxr-xr-x. 5 root root   53  7월 21 21:57 ..
 **명령어를 작성하세요:**
 
 - \# 4-2 답안 작성란  
+- 
+```
+[root@localhost permission_practice]# sudo chgrp -R managers company/projects/ 
+[root@localhost permission_practice]# ls -l company/projects/
+합계 0
+drwxr-xr-x. 2 root managers 55  7월 21 22:19 project_a
+d---rwx---. 2 root managers 67  7월 21 22:19 project_b
+drwxr-xr-x. 2 root managers  6  7월 21 21:57 project_c
+[root@localhost permission_practice]# 
+```
 -   
--   
-    
+ ```
+   [root@localhost permission_practice]# chgrp -R developers backup/daily/
+[root@localhost permission_practice]# ls -l backup/daily/
+합계 0
+-rwxr-xr-x. 1 root developers 0  7월 21 22:26 backup_20250721.tar.gz
+-rwxr-xr-x. 1 root developers 0  7월 21 22:26 log_20250721.txt
+-rwxr-xr-x. 1 root developers 0  7월 21 22:19 {backup_20250721.tar.gz,log_20250721.txt
+[root@localhost permission_practice]# 
+``` 
   ---
 
 
