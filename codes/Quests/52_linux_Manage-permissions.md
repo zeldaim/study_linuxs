@@ -171,7 +171,21 @@ drwxr-xr-x. 2 root  root  6 Jul 21 17:10 eve
 **명령어를 작성하세요:**
 
 - \# 2-1 답안 작성란  
--   
+-    ``` 
+[root@localhost ~]# chgrp developers shared/documents/ && chgrp managers  shared/documents/ 
+[root@localhost ~]# chmod -R 410 shared/documents/
+[root@localhost ~]# ls -l shared/ 
+total 0
+dr----x---. 2 root managers 68 Jul 21 17:10 documents
+drwxr-xr-x. 2 root root     58 Jul 21 17:10 resources
+drwxr-xr-x. 2 root root      6 Jul 21 17:10 tools
+[root@localhost ~]# ls -l shared/documents/ 
+total 0
+-r----x---. 1 root root 0 Jul 21 17:10 guidelines.txt
+-r----x---. 1 root root 0 Jul 21 17:10 manual.pdf
+-r----x---. 1 root root 0 Jul 21 17:10 templates.docx
+[root@localhost ~]# 
+``` 
 - 
 
 
@@ -186,7 +200,12 @@ drwxr-xr-x. 2 root  root  6 Jul 21 17:10 eve
 
 - \# 2-2 답안 작성란  
 -   
--   
+-    ```
+[root@localhost ~]# chmod -R g=rwx company/projects/project_a/ 
+[root@localhost ~]# chown alice company/projects/project_b && chown bob company/projects/project_b
+[root@localhost ~]# 
+ 
+``` 
     
   ---
 
