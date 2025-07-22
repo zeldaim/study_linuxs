@@ -520,6 +520,16 @@ Try 'cut --help' for more information.
 * \# 명령어를 작성하세요  
     
   ---
+  ```
+  [yhc@localhost text_processing_practice]$ touch yhc.txt 
+  [yhc@localhost text_processing_practice]$ cat *.txt 1> yhc.txt |sort yhc.txt |uniq -c | sort -r |head -n 5  
+cat: yhc.txt: input file is output file
+      6 apple
+      5 banana
+      4 cherry
+      3 Linux
+      2 Windows
+```
 
   ## **문제 12: 실무 시나리오 (최고급)**
 
