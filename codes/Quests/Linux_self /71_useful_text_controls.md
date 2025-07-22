@@ -449,7 +449,39 @@ Lisa:28:Seoul:Analyst
 **11-1.** `employees.txt` 파일에서 각 도시별 직원 수를 계산하여 많은 순서대로 출력하세요.
 
 * \# 명령어를 작성하세요
-
+```
+[yhc@localhost text_processing_practice]$ sort -t ':' -k 3 employees.txt | uniq -c 
+      1 Mike:30:Busan:Manager
+      1 Tom:35:Daegu:Developer
+      1 Lisa:28:Seoul:Analyst
+      1 Sara:22:Seoul:Designer
+      1 John:25:Seoul:Engineer
+[yhc@localhost text_processing_practice]$ cut -d ':' -k 3 employees.txt | uniq -c 
+cut: invalid option -- 'k'
+Try 'cut --help' for more information.
+[yhc@localhost text_processing_practice]$ cut -d ':' -f  3 employees.txt | uniq -c 
+      1 Seoul
+      1 Busan
+      1 Seoul
+      1 Daegu
+      1 Seoul
+[yhc@localhost text_processing_practice]$ sort -t ':' -k 3 | cut -d ':' -f 3 employees.txt | uniq -c 
+      1 Seoul
+      1 Busan
+      1 Seoul
+      1 Daegu
+      1 Seoul
+^C      
+[yhc@localhost text_processing_practice]$ 
+[yhc@localhost text_processing_practice]$ sort -t ':' -k 3 employees.txt | cut -d ':' -f 3 | uniq -c 
+      1 Busan
+      1 Daegu
+      3 Seoul
+[yhc@localhost text_processing_practice]$ sort -rt ':' -k 3 employees.txt | cut -d ':' -f 3 | uniq -c 
+      3 Seoul
+      1 Daegu
+      1 Busan
+```
 
 **11-2.** `system.log` 파일에서 시간대별(시간 단위) 로그 개수를 계산하세요.
 
