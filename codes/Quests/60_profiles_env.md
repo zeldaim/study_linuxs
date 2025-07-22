@@ -91,7 +91,30 @@ fi
 * **매 로그인마다 자동 생성**
 
   ---
+```
+[root@localhost ~]# exit
+logout
+[yhc@localhost ~]$ su - yhc
+Password: 
+[yhc@localhost ~]$ ls
+Desktop    Downloads  Pictures  quests     Videos
+Documents  Music      Public    Templates  wildcard_file_practice
+[yhc@localhost ~]$ ls -l Downloads/
+total 0
+drwxr-xr-x. 3 yhc yhc 34 Jul 22 13:33 auto_created
+drwxrwxrwx. 3 yhc yhc 24 Jul 21 14:29 chmod_lab
+drwxr-xr-x. 2 yhc yhc 23 Jul 18 17:40 logs
+drwxr-xr-x. 3 yhc yhc 25 Jul 21 14:30 practice
+dr-xrwxrwx. 2 yhc yhc  6 Jul 18 18:12 projects_logs
+[yhc@localhost ~]$ cat nano .bash_profile 
+cat: nano: No such file or directory
+# .bash_profile
 
+# Get the aliases and functions
+if [ -f ~/.bashrc ]; then
+	. ~/.bashrc
+fi
+```
   ### **🔹 문제 4\. `/etc/profile`을 수정하여, 로그인 시 모든 사용자에게 공지 메시지 `/etc/login_notice.txt`를 출력하도록 설정하시오.**
 
 **조건:**
