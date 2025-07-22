@@ -408,19 +408,42 @@ Tom
 **10-1.** `fruits.txt` 파일을 알파벳 역순으로 정렬하여 `fruits_reverse.txt` 파일에 저장하세요.
 
 * \# 명령어를 작성하세요
+```
+[yhc@localhost text_processing_practice]$ sort -r fruits.txt 1>fruits_reverse.txt 
+[yhc@localhost text_processing_practice]$ cat fruits_reverse.txt 
+date
+cherry
+banana
+banana
+apple
+apple
+[yhc@localhost text_processing_practice]$ 
 
+```
 
 **10-2.** `employees.txt` 파일에서 Seoul 거주자 정보를 `seoul_employees.txt` 파일에 저장하세요.
 
 * \# 명령어를 작성하세요
-
+```
+[yhc@localhost text_processing_practice]$ grep "Seoul" employees.txt 1>seoul_employees.txt 
+[yhc@localhost text_processing_practice]$ cat seoul_employees.txt
+John:25:Seoul:Engineer
+Sara:22:Seoul:Designer
+Lisa:28:Seoul:Analyst
+[yhc@localhost text_processing_practice]$ 
+```
 
 **10-3.** `system.log` 파일의 에러 메시지만 추출하여 `errors.txt` 파일에 저장하세요.
 
 * \# 명령어를 작성하세요  
     
   ---
-
+```
+[yhc@localhost text_processing_practice]$ grep 'ERROR' system.log 1>error.txt 
+[yhc@localhost text_processing_practice]$ cat error.txt 
+2024-01-15 09:35 ERROR Database connection failed
+2024-01-15 09:50 ERROR File not found: config.xml
+```
   ## **문제 11: 종합 문제 (고급)**
 
 **11-1.** `employees.txt` 파일에서 각 도시별 직원 수를 계산하여 많은 순서대로 출력하세요.
