@@ -552,7 +552,15 @@ cat: yhc.txt: input file is output file
 
 * \# /etc/passwd 파일에서 실제 사용자(홈 디렉토리가 /home으로 시작)만 추출하여 사용자명 순으로 정렬하세요  
 * \# 명령어를 작성하세요
-
+```
+[yhc@localhost text_processing_practice]$ grep 'home' /etc/passwd |sort -t ":" -k 6  
+alice:x:1001:1001::/home/alice:/bin/bash
+bob:x:1002:1002::/home/bob:/bin/bash
+charlie:x:1003:1003::/home/charlie:/bin/bash
+diana:x:1004:1004::/home/diana:/bin/bash
+eve:x:1005:1005::/home/eve:/bin/bash
+yhc:x:1000:1000:yhc:/home/yhc:/bin/bash
+```
 
 **12-3.** 설정 파일 백업 및 비교
 
