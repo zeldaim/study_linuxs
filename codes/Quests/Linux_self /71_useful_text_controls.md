@@ -542,7 +542,11 @@ cat: yhc.txt: input file is output file
 *   
 * \# 가장 많이 접속한 IP 주소를 찾으세요  
 * \# 명령어를 작성하세요
-
+```
+[yhc@localhost text_processing_practice]$ sort -t " " -k 7 access.log | tail -n 1 
+192.168.1.10 - - [15/Jan/2024:10:32:00] GET /about.html 404
+[yhc@localhost text_processing_practice]$
+```
 
 **12-2.** 시스템 사용자 분석
 
