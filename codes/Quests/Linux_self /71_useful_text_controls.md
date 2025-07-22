@@ -176,7 +176,7 @@ Sara:22:Seoul:Designer
 Lisa:28:Seoul:Analyst
 [yhc@localhost text_processing_practice]$ 
 
-
+```
 
 **4-4.** 현재 디렉토리의 모든 `.txt` 파일에서 "Linux"라는 단어를 대소문자 구분 없이 검색하세요.
 
@@ -185,11 +185,12 @@ Lisa:28:Seoul:Analyst
   ---
   ```
   [yhc@localhost text_processing_practice]$ grep -i "linux" *.txt
-operating_systems.txt:Linux
-operating_systems.txt:Linux
-operating_systems.txt:Linux
+ ```
+ operating_systems.txt:Linux
+ operating_systems.txt:Linux
+ operating_systems.txt:Linux
 ```
-  
+ 
 
 
   ## **문제 5: cut 명령어 활용 (중급)**
@@ -226,6 +227,7 @@ Seoul:Analyst
   ---
   ```
   [yhc@localhost text_processing_practice]$ cut -d " " -f 2 system.log 
+```
 09:30
 09:35
 09:40
@@ -280,6 +282,7 @@ Lisa/28/Seoul/Analyst
   ---
   ```
   [yhc@localhost text_processing_practice]$ echo "Linux-System-Administration" | tr - " " 
+```
 Linux System Administration
 [yhc@localhost text_processing_practice]$ 
 ```
@@ -302,6 +305,7 @@ Linux System Administration
 * \# 명령어를 작성하세요  
     ````
     [yhc@localhost text_processing_practice]$ tail -n 5 scores.txt 
+```
 200
 150
 75
@@ -339,21 +343,21 @@ Linux System Administration
   ---
   ```
   [yhc@localhost text_processing_practice]$ diff fruits_v1.txt fruits_v2.txt 
-2c2
-< banana
----
-> orange
-3a4
-> grape
-[yhc@localhost text_processing_practice]$ diff -u fruits_v1.txt fruits_v2.txt
---- fruits_v1.txt	2025-07-23 02:58:39.819987245 +0900
-+++ fruits_v2.txt	2025-07-23 02:58:39.819987245 +0900
-@@ -1,3 +1,4 @@
- apple
--banana
-+orange
- cherry
-```
+  2c2
+  < banana
+
+  > orange
+  3a4
+  grape
+  [yhc@localhost text_processing_practice]$ diff -u fruits_v1.txt fruits_v2.txt
+  --- fruits_v1.txt	2025-07-23 02:58:39.819987245 +0900
+  +++ fruits_v2.txt	2025-07-23 02:58:39.819987245 +0900
+   @@ -1,3 +1,4 @@
+  apple
+  -banana
+  +orange
+  cherry
+  ```
 
   ## **문제 9: 파이프라인 활용 (고급)**
 
@@ -399,9 +403,10 @@ Lisa:28:Seoul:Analyst
 * \# 명령어를 작성하세요  
     
   ---
-  ```[yhc@localhost text_processing_practice]$ sort -t ':' -k 2 -nr employees.txt | cut -d ':' -f 1  | head -n 1 
-Tom
-```
+  ```
+  [yhc@localhost text_processing_practice]$ sort -t ':' -k 2 -nr employees.txt | cut -d ':' -f 1  | head -n 1 
+  Tom
+  ```
 
   ## **문제 10: 리다이렉션 활용 (중급)**
 
@@ -523,13 +528,14 @@ Try 'cut --help' for more information.
   ```
   [yhc@localhost text_processing_practice]$ touch yhc.txt 
   [yhc@localhost text_processing_practice]$ cat *.txt 1> yhc.txt |sort yhc.txt |uniq -c | sort -r |head -n 5  
-cat: yhc.txt: input file is output file
+  cat: yhc.txt: input file is output file
       6 apple
       5 banana
       4 cherry
       3 Linux
       2 Windows
-```
+     ```
+ 
 
   ## **문제 12: 실무 시나리오 (최고급)**
 
