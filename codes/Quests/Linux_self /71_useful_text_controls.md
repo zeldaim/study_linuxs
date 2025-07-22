@@ -360,12 +360,34 @@ Linux System Administration
 **9-1.** `employees.txt` 파일에서 Seoul에 거주하는 직원의 이름만 추출하세요.
 
 * \# 명령어를 작성하세요
+```
+[yhc@localhost text_processing_practice]$ cat employees.txt | grep "Seoul"
+John:25:Seoul:Engineer
+Sara:22:Seoul:Designer
+Lisa:28:Seoul:Analyst
+[yhc@localhost text_processing_practice]$
+```
 
 
 **9-2.** `system.log` 파일에서 에러와 경고 메시지의 총 개수를 확인하세요.
 
 * \# 명령어를 작성하세요
-
+```
+2024-01-15 09:30 INFO System startup complete
+2024-01-15 09:35 ERROR Database connection failed
+2024-01-15 09:40 WARNING Memory usage high (85%)
+2024-01-15 09:45 INFO User login: admin
+2024-01-15 09:50 ERROR File not found: config.xml
+2024-01-15 09:55 WARNING Disk space low
+2024-01-15 10:00 INFO System backup started
+[yhc@localhost text_processing_practice]$ grep -n 'ERROR\|WARNING' system.log 
+2:2024-01-15 09:35 ERROR Database connection failed
+3:2024-01-15 09:40 WARNING Memory usage high (85%)
+5:2024-01-15 09:50 ERROR File not found: config.xml
+6:2024-01-15 09:55 WARNING Disk space low
+[yhc@localhost text_processing_practice]$ grep -n 'ERROR\|WARNING' system.log | wc -l 
+4
+```
 
 **~~9-3.~~** ~~`scores.txt` 파일에서 150점 이상인 점수의 개수를 확인하세요.~~
 
@@ -377,6 +399,9 @@ Linux System Administration
 * \# 명령어를 작성하세요  
     
   ---
+  ```[yhc@localhost text_processing_practice]$ sort -t ':' -k 2 -nr employees.txt | cut -d ':' -f 1  | head -n 1 
+Tom
+```
 
   ## **문제 10: 리다이렉션 활용 (중급)**
 
