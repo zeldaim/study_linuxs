@@ -568,4 +568,13 @@ yhc:x:1000:1000:yhc:/home/yhc:/bin/bash
 * \# 명령어들을 순서대로 작성하세요  
     
   ---
-
+```
+[yhc@localhost text_processing_practice]$ cp employees.txt employees_backup.txt
+[yhc@localhost text_processing_practice]$ nano employees.txt 
+[yhc@localhost text_processing_practice]$ diff employees.txt employees_backup.txt
+1c1
+< John:25:Deagu:Engineer
+---
+> John:25:Seoul:Engineer
+[yhc@localhost text_processing_practice]$
+```
