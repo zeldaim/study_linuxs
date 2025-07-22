@@ -321,6 +321,15 @@ Linux System Administration
 **8-1.** `fruits_v1.txt`와 `fruits_v2.txt` 파일의 차이점을 확인하세요.
 
 * \# 명령어를 작성하세요
+```
+[yhc@localhost text_processing_practice]$ diff fruits_v1.txt fruits_v2.txt 
+2c2
+< banana
+---
+> orange
+3a4
+> grape
+```
 
 
 **8-2.** 두 파일의 차이점을 unified format으로 출력하세요.
@@ -328,6 +337,23 @@ Linux System Administration
 * \# 명령어를 작성하세요  
     
   ---
+  ```
+  [yhc@localhost text_processing_practice]$ diff fruits_v1.txt fruits_v2.txt 
+2c2
+< banana
+---
+> orange
+3a4
+> grape
+[yhc@localhost text_processing_practice]$ diff -u fruits_v1.txt fruits_v2.txt
+--- fruits_v1.txt	2025-07-23 02:58:39.819987245 +0900
++++ fruits_v2.txt	2025-07-23 02:58:39.819987245 +0900
+@@ -1,3 +1,4 @@
+ apple
+-banana
++orange
+ cherry
+```
 
   ## **문제 9: 파이프라인 활용 (고급)**
 
