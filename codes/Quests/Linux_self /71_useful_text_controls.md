@@ -486,7 +486,29 @@ Try 'cut --help' for more information.
 **11-2.** `system.log` 파일에서 시간대별(시간 단위) 로그 개수를 계산하세요.
 
 * \# 명령어를 작성하세요
-
+```
+[yhc@localhost text_processing_practice]$ cut -d " " -f 2 system.log 
+09:30
+09:35
+09:40
+09:45
+09:50
+09:55
+10:00
+[yhc@localhost text_processing_practice]$ uniq -c 
+^X^C
+[yhc@localhost text_processing_practice]$ sort -t " " -k 2 system.log |cut -d " " -f 2 |uniq -c 
+      1 09:30
+      1 09:35
+      1 09:40
+      1 09:45
+      1 09:50
+      1 09:55
+      1 10:00
+[yhc@localhost text_processing_practice]$ sort -t " " -k 2 system.log |cut -d " " -f 2 | cut -d ":" -f 1 | uniq -c  
+      6 09
+      1 10
+```
 
 **~~11-3.~~** ~~`scores.txt` 파일에서 100점 이상인 점수들만 추출하여 평균을 구하세요. (hint: `bc` 명령어 사용)~~
 
