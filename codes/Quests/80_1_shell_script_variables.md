@@ -80,3 +80,15 @@ hello linux
 
 
 ```
+```
+[yhc@localhost Downloads]$ cat 80_1_shell_variables_aguments.sh 
+V_file="$1"
+ echo "FILE=$1"
+V_Contents="$2"
+
+
+
+touch ./"$1".txt && echo "$2" >"$1".txt && cat "$1".txt && echo "sucess"
+ 
+
+```
