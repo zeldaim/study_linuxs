@@ -199,7 +199,34 @@ Unique words saved to: article\_unique.txt
       1 use
 [yhc@localhost env]$ 
 ```
+```
+[yhc@localhost env]$ nano uniq_words.sh  
+[yhc@localhost env]$ bash uniq_words.sh 
+Enter input file:1111
+unique words saved to : 
+      1 an
+      1 automation.
+      1 developers
+      1 embedded
+      1 many
+      1 open-source
+      1 operating
+      1 popular
+      1 programming
+      1 servers
+      1 system.
+      1 systems.
+      1 use
+```
+```
+[yhc@localhost env]$ cat uniq_words.sh 
 
+read -p "Enter input file:""$article_unique"
+echo unique words saved to : "$article_unique"
+
+cat article.txt | tr ' ' '\n' | tr A-Z a-z | sort | uniq -c |sort -n | tr 2-9 ' ' | grep 1 > "$article_unique".txt
+cat "$article_unique".txt
+```
 ### **✅ \[문제 4\] 두 파일의 마지막 줄 비교**
 
 \# 문제 설명
