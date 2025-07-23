@@ -584,3 +584,5 @@ yhc:x:1000:1000:yhc:/home/yhc:/bin/bash
 > John:25:Seoul:Engineer
 [yhc@localhost text_processing_practice]$
 ```
+
+>>>>>>> 1dbe7ed2421f9aac6a601062e88a514f4a9e3a96

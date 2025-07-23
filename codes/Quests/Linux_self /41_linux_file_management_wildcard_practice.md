@@ -320,3 +320,5 @@ report1.txt  report2.txt  report3.txt
 - 복합 패턴 활용: `*[0-9]*`, `file[1-3].txt`  
 - 디렉터리 생성 시 `-p` 옵션 활용: `mkdir -p path/to/directory`
 
+
+>>>>>>> 51109fe26808ea1caad95e6470a110f682c2fb5e
