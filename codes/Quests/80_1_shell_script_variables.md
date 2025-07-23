@@ -88,7 +88,8 @@ V_Contents="$2"
 
 
 
-touch ./V_file.txt && echo V_Contents >V_file.txt && cat V_file.txt && echo "sucess"
+touch ./V_file.txt && echo V_Contents >V_file.txt && cat V_file.txt && e>
+
  
 
 
