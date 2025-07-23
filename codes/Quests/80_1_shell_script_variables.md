@@ -88,7 +88,8 @@ V_Contents="$2"
 
 
 
-touch ./"$1".txt && echo "$2" >"$1".txt && cat "$1".txt && echo "sucess"
+touch ./V_file.txt && echo V_Contents >V_file.txt && cat V_file.txt && echo "sucess"
  
+
 
 ```
