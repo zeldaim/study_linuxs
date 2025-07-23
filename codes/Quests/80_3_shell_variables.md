@@ -181,6 +181,24 @@ Enter input file: article.txt
 Unique words saved to: article\_unique.txt
 
 ---
+```
+[yhc@localhost env]$ cat article.txt | tr ' ' '\n' | tr A-Z a-z | sort | uniq -c |sort -n | tr 2-9 ' ' | grep 1 > new1.txt  
+[yhc@localhost env]$ cat new1.txt
+      1 an
+      1 automation.
+      1 developers
+      1 embedded
+      1 many
+      1 open-source
+      1 operating
+      1 popular
+      1 programming
+      1 servers
+      1 system.
+      1 systems.
+      1 use
+[yhc@localhost env]$ 
+```
 
 ### **✅ \[문제 4\] 두 파일의 마지막 줄 비교**
 
