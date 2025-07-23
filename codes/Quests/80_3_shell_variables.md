@@ -142,6 +142,21 @@ bash count\_keyword.sh error logfile.txt
 The word 'error' appeared 5 times.
 
 ---
+```
+[yhc@localhost env]$ bash count_keyword.sh ERROR logfile.txt 
+ERROR
+ERROR
+ERROR
+3
+```
+```
+[yhc@localhost env]$ cat count_keyword.sh 
+word="$1"
+file_name="$2" 
+grep -o "$word" "$file_name"  
+grep -o "$word" "$file_name" | wc -l > n
+cat n  
+```
 
 ### **✅ \[문제 3\] 고유 단어 목록 만들기**
 
