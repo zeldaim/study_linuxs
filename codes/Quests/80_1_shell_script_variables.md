@@ -60,37 +60,3 @@
   ### **💡 힌트**
 
 * `$1`, `$2`를 사용하여 외부 인자를 받을 수 있습니다.
-```
-[yhc@localhost Downloads]$ source 80_1_shell_variables_aguments.sh welcom.txt "hello linux" 
-FILE=welcom.txt
-hello linux
-sucess
-[yhc@localhost Downloads]$ ls -l 
-total 24
--rw-r--r--. 1 yhc yhc 123 Jul 23 15:26 80_1_shell_variables_aguments.sh
--rw-r--r--. 1 yhc yhc   4 Jul 23 15:27 eng.txt
--rw-r--r--. 1 yhc yhc   5 Jul 23 15:18 file.txt
--rw-r--r--. 1 yhc yhc 199 Jul 23 14:37 varialbles.sh
--rw-------. 1 yhc yhc   0 Jul 23 15:04 varialbles.sh.save
--rw-r--r--. 1 yhc yhc  76 Jul 23 15:04 varialbles.sh.save.1
--rw-r--r--. 1 yhc yhc  12 Jul 23 15:29 welcom.txt.txt
-[yhc@localhost Downloads]$ cat welcom.txt.txt 
-hello linux
-[yhc@localhost Downloads]$ 
-
-
-```
-```
-[yhc@localhost Downloads]$ cat 80_1_shell_variables_aguments.sh 
-V_file="$1"
- echo "FILE=$1"
-V_Contents="$2"
-
-
-
-touch ./V_file.txt && echo V_Contents >V_file.txt && cat V_file.txt && e>
-
- 
-
-
-```
