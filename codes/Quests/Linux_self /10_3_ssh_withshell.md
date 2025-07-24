@@ -163,8 +163,6 @@ step1
 ``` 
 #shell script
 [yhc@localhost shell_practice]$ cat grade_analyzer.sh 
-sed 's/수학/mat/g; s/영어/eng/g; s/과학/sic/g' students.txt
-
 read -p "input subject:" sub
 while read line
 do
@@ -173,33 +171,19 @@ do
         echo "$sub=$score" >> mat.txt
     elif [ "$sub" == "eng" ]; then
         score=$(cut -d ":" -f1,5 students.txt)
-    while read line
-do
-    if [ "$sub" == "mat" ]; then
-        score=$(cut -d ":" -f1,3 students.txt)
-        echo "$sub=$score" >> mat.txt
-    elif [ "$sub" == "eng" ]; then
+echo "$sub=$score" >> eng.txt
+elif [ "$sub" == "sci" ]; then
         score=$(cut -d ":" -f1,5 students.txt)
-        echo "$sub=$score" >> eng.txt
-    elif [ "$sub" == "sic" ]; then
-        score=$(cut -d ":" -f1,7 students.txt)
-        echo "$sub=$score" >> sic.txt
+echo "$sub=$score" >> sci.txt
+
     else
         echo "try again"
         read -p "subject: " sub
     fi
 done
-    echo "$sub=$score" >> eng.txt
-    elif [ "$sub" == "sic" ]; then
-        score=$(cut -d ":" -f1,7 students.txt)
-        echo "$sub=$score" >> sic.txt
-    else
-        echo "try again"
-        read -p "subject: " sub
-    fi
-done
+
 [yhc@localhost shell_practice]$ 
-```
+
 ```
 결과 : >> mat.txt 코드로 인해 값이 화면상에 출력이 되지 않고 cut이 파일을 대상으로 수행되어 전체 점수값이 여러번 쓰여짐
 ```
