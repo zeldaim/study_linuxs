@@ -147,17 +147,20 @@ echo "ratio: $(echo $b/($a + $b)" | bc)"
 
 ...
 ```
-[yhc@192.168.0.51 ~]$ cat servers.sh
-read -p "input id=" $id
-time =$time
+read -r -p "input_ip : " id
+
 ping -c 1 "$id"
- if [time < 100ms]; then 
-	echo [정상] web01 ($id) - 응답시간:"$time" ;
-else [오프라인] db01 ("$id") - 응답없음;
+time =$"(cut -d " " -f7 "$id")
+if [time >= 100]; then 
+        echo offline db01 ($id);
+else 
+        echo normal web01 ($id);
+        fi    
 
- fi
 ```
-
+```
+동작안함
+```
 **제한사항:**
 
 * if문과 변수만 사용  
