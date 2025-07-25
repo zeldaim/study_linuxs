@@ -89,7 +89,18 @@ EOF
 * 파일명은 스크립트 실행 시 첫 번째 인자로 받기
 
 ---
+```
+vim network.sh
+read -p "which one do you want to check" file
+T="$file"
+a=$(cut -d " " -f5 "$T"| sort | uniq -c | grep 'failed' | tr -d '[a-z]')
+b=$(cut -d " " -f5 "$T" " file | sort | uniq -c | grep 'success' | tr -d '[a-z]')
 
+echo "try: $((a + b))"
+echo "success: $b"
+echo "failed: $a"
+echo "ratio: $(echo $b/($a + $b)" | bc)"
+```
 ## **문제 2: IP 주소별 접속 빈도 상위 리스트**
 
 **요구사항:**
