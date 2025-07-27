@@ -226,7 +226,7 @@ bash: a=: command not found...
 tiem 10:30:25
 ```
 `a,b,c, 변수로 따로 지정하고 시간순으로 정렬한 다음 상위 값 추출`
-
+`#192.168.1.100 의 처음 접속시간`
 
 
 ## **문제 3: 서버 상태 점검 스크립트**
@@ -262,7 +262,48 @@ OR
 * ping은 1회만 실행 (`ping -c 1`)
 
 ---
+```
+#ping 결과값 분석#
 
+[yhc@localhost ~]$ ping -c 1 192.168.72.129
+PING 192.168.72.129 (192.168.72.129) 56(84) bytes of data.
+64 bytes from 192.168.72.129: icmp_seq=1 ttl=64 time=0.053 ms
+
+--- 192.168.72.129 ping statistics ---
+1 packets transmitted, 1 received, 0% packet loss, time 0ms
+rtt min/avg/max/mdev = 0.053/0.053/0.053/0.000 ms
+[yhc@localhost ~]$ 
+```
+```
+[yhc@localhost ~]$  bash servers.sh | cut -d "/" -f5 | tail -n 1
+id=192.168.72.129
+0.068
+```
+```
+Shell script 내용
+read -p "id=" ip
+
+ping -c 1 "$ip"
+
+```
+```
+#최종
+[yhc@localhost ~]$ vim servers.sh 
+[yhc@localhost ~]$ bash servers.sh
+id=192.168.72.129
+(standard_in) 1: syntax error
+good! 
+```
+```
+shell script
+read -p "id=" ip
+if (( $(echo "$time > 0.01" | bc -l) )); then
+    echo "slow off-line $ip" "$time" 
+else
+    echo "good!" "$time"
+fi
+```
+`오류 발생`
 ## **문제 4: 네트워크 트래픽 임계값 모니터링**
 
 **요구사항:**
