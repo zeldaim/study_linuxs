@@ -335,7 +335,49 @@ fi
 * 숫자 비교를 위한 조건문 사용
 
 ---
+```
+[yhc@localhost ~]$ n="$a"|a=1
+[yhc@localhost ~]$ head -n a*2|bc connections.txt 
+head: invalid number of lines: ‘a*2’
+connections.txt 2: syntax error
+connections.txt 4: syntax error
+connections.txt 6: syntax error
+connections.txt 8: syntax error
+connections.txt 10: syntax error
+connections.txt 12: syntax error
+[yhc@localhost ~]$ 
+```
+` 원본 데이터 공백라인이 카운터 되기 때문에 짝수번째 행만 구분하고 싶었는데 오류가남`
+```
+[yhc@localhost ~]$ a=1
+n=$(echo "$a*2" | bc)
+head -n "$n" connections.txt
 
+192.168.1.100 5
+[yhc@localhost ~]$ 
+```
+```
+[yhc@localhost ~]$ wc -l connections.txt 
+13 connections.txt
+```
+` 총 13줄 중에 2,4,6,8,10,12 번째 줄에 데이터가 있으므로 if a le 6 , n=n+1 head 끊어 읽기`
+
+
+```
+[yhc@localhost ~]$ a=0 if [ "$a" -le 6 ]; then
+    a=$(echo "$a+1" | bc)
+    n=$(echo "$a*2" | bc)
+    head -n "$n" connections.txt
+fi
+bash: syntax error near unexpected token `then'
+
+192.168.1.100 5
+
+192.168.1.101 12
+
+192.168.1.102 8
+```
+`실패`
 ## **문제 5: 현재 시스템 네트워크 정보 수집기**
 
 **요구사항:**
