@@ -38,8 +38,45 @@ $ ./check\_ports.sh 80 443 22 3000 8080
 ‘
 
 총 5개 포트 중 3개가 사용 중입니다.
-
+```
+[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8000 --bind 0.0.0.0
+nohup: ignoring input and appending output to 'nohup.out'
+^C[yhc@192.168.0.51 ~/download] nohup python3 -m http.server 8000 --bind 0.0.0.00&
+[1] 3034
+nohup: ignoring input and appending output to 'nohup.out'
+[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8800 --bind 0.0.0.00&
+[2] 3042
+nohup: ignoring input and appending output to 'nohup.out'
+[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8900 --bind 0.0.0.00&
+[3] 3050
+nohup: ignoring input and appending output to 'nohup.out'
+[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8700 --bind 0.0.0.00&
+[4] 3058
+nohup: ignoring input and appending output to 'nohup.out'
+[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8600 --bind 0.0.0.00&
+[5] 3066
+```
+```
+[yhc@192.168.0.51 ~/download]$ ss -tuln 
+Netid   State    Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  
+udp     UNCONN   0        0                0.0.0.0:5353           0.0.0.0:*     
+udp     UNCONN   0        0              127.0.0.1:323            0.0.0.0:*     
+udp     UNCONN   0        0                0.0.0.0:52946          0.0.0.0:*     
+udp     UNCONN   0        0                   [::]:5353              [::]:*     
+udp     UNCONN   0        0                  [::1]:323               [::]:*     
+udp     UNCONN   0        0                   [::]:58945             [::]:*     
+tcp     LISTEN   0        5                0.0.0.0:8800           0.0.0.0:*     
+tcp     LISTEN   0        4096           127.0.0.1:631            0.0.0.0:*     
+tcp     LISTEN   0        5                0.0.0.0:8900           0.0.0.0:*     
+tcp     LISTEN   0        5                0.0.0.0:8000           0.0.0.0:*     
+tcp     LISTEN   0        128              0.0.0.0:22             0.0.0.0:*     
+tcp     LISTEN   0        5                0.0.0.0:8700           0.0.0.0:*     
+tcp     LISTEN   0        5                0.0.0.0:8600           0.0.0.0:*     
+tcp     LISTEN   0        4096               [::1]:631               [::]:*     
+tcp     LISTEN   0        128                 [::]:22                [::]:* 
+```
 ---
+
 
 ## **연습문제 2: 특정 포트 프로세스 종료 스크립트**
 
