@@ -39,45 +39,119 @@ $ ./check\_ports.sh 80 443 22 3000 8080
 
 총 5개 포트 중 3개가 사용 중입니다.
 ```
-[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8000 --bind 0.0.0.0
+[yhc@localhost practice]$ nohup python3 -m http.server 8800&
+[1] 3141
 nohup: ignoring input and appending output to 'nohup.out'
-^C[yhc@192.168.0.51 ~/download] nohup python3 -m http.server 8000 --bind 0.0.0.00&
-[1] 3034
+[yhc@localhost practice]$ nohup python3 -m http.server 8880&
+[2] 3159
 nohup: ignoring input and appending output to 'nohup.out'
-[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8800 --bind 0.0.0.00&
-[2] 3042
+[yhc@localhost practice]$ nohup python3 -m http.server 8888&
+[3] 3176
 nohup: ignoring input and appending output to 'nohup.out'
-[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8900 --bind 0.0.0.00&
-[3] 3050
+[yhc@localhost practice]$ nohup python3 -m http.server 9999&
+[4] 3181
 nohup: ignoring input and appending output to 'nohup.out'
-[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8700 --bind 0.0.0.00&
-[4] 3058
+[yhc@localhost practice]$ nohup python3 -m http.server 9990&
+[5] 3187
 nohup: ignoring input and appending output to 'nohup.out'
-[yhc@192.168.0.51 ~/download]$  nohup python3 -m http.server 8600 --bind 0.0.0.00&
-[5] 3066
-```
-```
-[yhc@192.168.0.51 ~/download]$ ss -tuln 
-Netid   State    Recv-Q   Send-Q     Local Address:Port      Peer Address:Port  
-udp     UNCONN   0        0                0.0.0.0:5353           0.0.0.0:*     
-udp     UNCONN   0        0              127.0.0.1:323            0.0.0.0:*     
-udp     UNCONN   0        0                0.0.0.0:52946          0.0.0.0:*     
-udp     UNCONN   0        0                   [::]:5353              [::]:*     
-udp     UNCONN   0        0                  [::1]:323               [::]:*     
-udp     UNCONN   0        0                   [::]:58945             [::]:*     
-tcp     LISTEN   0        5                0.0.0.0:8800           0.0.0.0:*     
-tcp     LISTEN   0        4096           127.0.0.1:631            0.0.0.0:*     
-tcp     LISTEN   0        5                0.0.0.0:8900           0.0.0.0:*     
-tcp     LISTEN   0        5                0.0.0.0:8000           0.0.0.0:*     
-tcp     LISTEN   0        128              0.0.0.0:22             0.0.0.0:*     
-tcp     LISTEN   0        5                0.0.0.0:8700           0.0.0.0:*     
-tcp     LISTEN   0        5                0.0.0.0:8600           0.0.0.0:*     
-tcp     LISTEN   0        4096               [::1]:631               [::]:*     
-tcp     LISTEN   0        128                 [::]:22                [::]:* 
-```
+
 ---
+```
+```
+yhc@localhost practice]$ ss -tulnp 
+Netid State  Recv-Q Send-Q  Local Address:Port    Peer Address:Port Process                            
+udp   UNCONN 0      0             0.0.0.0:5353         0.0.0.0:*                                       
+udp   UNCONN 0      0           127.0.0.1:323          0.0.0.0:*                                       
+udp   UNCONN 0      0             0.0.0.0:50634        0.0.0.0:*                                       
+udp   UNCONN 0      0                [::]:40695           [::]:*                                       
+udp   UNCONN 0      0                [::]:5353            [::]:*                                       
+udp   UNCONN 0      0               [::1]:323             [::]:*                                       
+tcp   LISTEN 0      128           0.0.0.0:22           0.0.0.0:*                                       
+tcp   LISTEN 0      4096        127.0.0.1:631          0.0.0.0:*                                       
+tcp   LISTEN 0      5             0.0.0.0:8800         0.0.0.0:*     users:(("python3",pid=3141,fd=3)) 
+tcp   LISTEN 0      5             0.0.0.0:8880         0.0.0.0:*     users:(("python3",pid=3159,fd=3)) 
+tcp   LISTEN 0      5             0.0.0.0:8888         0.0.0.0:*     users:(("python3",pid=3176,fd=3)) 
+tcp   LISTEN 0      5             0.0.0.0:9990         0.0.0.0:*     users:(("python3",pid=3187,fd=3)) 
+tcp   LISTEN 0      5             0.0.0.0:9999         0.0.0.0:*     users:(("python3",pid=3181,fd=3)) 
+tcp   LISTEN 0      128              [::]:22              [::]:*                                       
+tcp   LISTEN 0      4096            [::1]:631             [::]:*                                       
+[yhc@localhost practice]$ 
+```
+```
+[yhc@localhost practice]$ read -p "ports" a b c d e  
+ports8800 8880 8888 9990 9999 
+[yhc@localhost practice]$ ss -tulnp | grep "$a" 
+tcp   LISTEN 0      5            0.0.0.0:8800       0.0.0.0:*    users:(("python3",pid=3141,fd=3))
+```
+```
+shell try1 
+read -p "./check_ports.sh" $a $b $c $d $e
+if[ss -tulnp|grep"$a"]
+then;
+ echo port"$a":using
+else
+        echo port"$a":unused 
+fi
+```
+```
+read -p "./check_ports.sh" a b c d e 
+ touch result.txt
+
+ cat result.txt > result_1.txt 
+ ss -tulnp | grep "0.0.0.0:$a" > result.txt 
+if  diff result.txt result_1.txt 
+then
+ echo port"$a":unused
+
+else
+       	echo port"$a":using 
+fi 
+  
+cat result.txt > result_1.txt
+ ss -tulnp | grep "0.0.0.0:$b" > result.txt
+if  diff result.txt result_1.txt 
+then
+ echo port"$b":unused
+
+else
+        echo port"$b":using 
+fi 
+
+cat result.txt > result_1.txt
+ ss -tulnp | grep "0.0.0.0:$c" > result.txt
+if  diff result.txt result_1.txt 
+then
+ echo port"$c":unused
+
+else
+        echo port"$c":using 
+fi 
+
+cat result.txt > result_1.txt
+ ss -tulnp | grep "0.0.0.0:$d" > result.txt
+if  diff result.txt result_1.txt 
+then
+ echo port"$d":unused
+
+else
+        echo port"$d":using
+fi
+
+cat result.txt > result_1.txt
+ ss -tulnp | grep "0.0.0.0:$e" > result.txt
+if  diff result.txt result_1.txt 
+then
+ echo port"$e":unused
+
+else
+        echo port"$e":using 
+fi 
 
 
+```
+```
+문제점 : 포트 숫자가 아닌 것 까지 검색이 된다
+```
 ## **연습문제 2: 특정 포트 프로세스 종료 스크립트**
 
 **문제**: 특정 포트를 사용하는 프로세스를 찾아서 종료하는 스크립트를 작성하세요.
